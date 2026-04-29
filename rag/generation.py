@@ -1,99 +1,78 @@
-# rag/evaluation.py
-import json
-from datetime import datetime
-from pathlib import Path
-
-import numpy as np
-
-from rag.chunking import build_chunks
-from rag.embedding import load_embedding_model, build_embeddings
-from rag.retrieval import retrieve
-from rag.generation import load_llm, build_prompt, generate_stream
+import time
+from llama_cpp import Llama
 
 
-TOP_K = 3
-MODEL_NAME = "qwen2.5-1.5b.q4_k_m"
-MODEL_PATH = "models/qwen2.5-1.5b.q4_k_m.gguf"
-N_GPU_LAYERS = 20
-
-TEST_DATA_PATH = "data/test_data.json"
-PRODUCT_DATA_PATH = "data/product_info.json"
-OUTPUT_PATH = "storage/evaluation_records.jsonl"
-
-
-def load_test_data(path=TEST_DATA_PATH):
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
-def save_jsonl(record, path=OUTPUT_PATH):
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-
-    with open(path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False) + "\n")
-
-
-def main():
-    print("載入 embedding model...")
-    embedding_model = load_embedding_model()
-
-    print("建立 chunks / embeddings...")
-    chunks = build_chunks(PRODUCT_DATA_PATH)
-    embeddings = build_embeddings(chunks, embedding_model)
-
-    print("載入 LLM...")
-    llm = load_llm(
-        model_path=MODEL_PATH,
-        n_gpu_layers=N_GPU_LAYERS,
+def load_llm(
+    model_path="models/qwen2.5-1.5b.q4_k_m.gguf",
+    n_ctx=2048,
+    n_gpu_layers=20,
+    n_threads=4,
+):
+    return Llama(
+        model_path=model_path,
+        n_ctx=n_ctx,
+        n_gpu_layers=n_gpu_layers,
+        n_threads=n_threads,
+        verbose=False,
     )
 
-    test_data = load_test_data(TEST_DATA_PATH)
 
-    print(f"開始 evaluation，共 {len(test_data)} 題。")
-    print(f"結果會儲存到：{OUTPUT_PATH}")
+def build_prompt(query, retrieved_results):
+    context = "\n\n".join(
+        f"[資料 {i+1}]\n{r['chunk']['text']}"
+        for i, r in enumerate(retrieved_results)
+    )
 
-    for i, item in enumerate(test_data, start=1):
-        query = item["question"]
+    return f"""你是 GIGABYTE AORUS MASTER 16 AM6H 產品規格 AI 助手。
 
-        print("\n" + "=" * 80)
-        print(f"[{i}/{len(test_data)}] Query: {query}")
-        print("=" * 80)
+請嚴格根據下方「產品資料」回答使用者問題。
+如果資料中沒有答案，請回答「根據目前資料無法確認」，不要自行編造。
+如果遇到跟產品規格無關的問題，請回答「我只能回答規格問題」，不要回應無關問題。
+請使用繁體中文回答；若使用者用英文提問，也可以用英文回答。
 
-        results = retrieve(
-            query=query,
-            model=embedding_model,
-            embeddings=embeddings,
-            chunks=chunks,
-            top_k=TOP_K,
-        )
+產品資料：
+{context}
 
-        prompt = build_prompt(query, results)
+使用者問題：
+{query}
 
-        print("回答：")
-        answer, metrics = generate_stream(llm, prompt)
-        print()
-
-        record = {
-            "timestamp": datetime.now().isoformat(timespec="seconds"),
-            "query": query,
-            "expected_answer": item.get("expected_answer"),
-            "type": item.get("type"),
-            "answer": answer.strip(),
-            "ttft": metrics["ttft"],
-            "tps": metrics["tps"],
-            "output_tokens": metrics["output_tokens"],
-            "top_k": TOP_K,
-            "model": MODEL_NAME,
-            "n_gpu_layers": N_GPU_LAYERS,
-        }
-
-        save_jsonl(record)
-
-        print("metrics:")
-        print(json.dumps(record, ensure_ascii=False, indent=2))
-
-    print("\nEvaluation 完成。")
+回答：
+"""
 
 
-if __name__ == "__main__":
-    main()
+def generate_stream(llm, prompt, max_tokens=256):
+    start_time = time.perf_counter()
+    first_token_time = None
+    output_text = ""
+    token_count = 0
+
+    stream = llm(
+        prompt,
+        max_tokens=max_tokens,
+        temperature=0.1,
+        top_p=0.9,
+        stop=["使用者問題：", "\n\n使用者："],
+        stream=True,
+    )
+
+    for chunk in stream:
+        token = chunk["choices"][0]["text"]
+
+        if token:
+            if first_token_time is None:
+                first_token_time = time.perf_counter()
+
+            print(token, end="", flush=True)
+            output_text += token
+            token_count += 1
+
+    end_time = time.perf_counter()
+    generation_time = end_time - (first_token_time or start_time)
+
+    metrics = {
+        "ttft": first_token_time - start_time if first_token_time else None,
+        "tps": token_count / generation_time if generation_time > 0 else 0,
+        "output_tokens": token_count,
+    }
+
+    return output_text, metrics
