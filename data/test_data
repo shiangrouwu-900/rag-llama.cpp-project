@@ -1,0 +1,112 @@
+[
+  {
+    "question": "這台筆電的 CPU 是什麼？",
+    "expected_answer": "Intel Core Ultra 9 Processor 275HX",
+    "type": "exact"
+  },
+  {
+    "question": "這台的 GPU 型號？",
+    "expected_answer": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "type": "exact"
+  },
+  {
+    "question": "支援的作業系統有哪些？",
+    "expected_answer": "Windows 11 Pro, Windows 11 Home, UEFI Shell OS",
+    "type": "exact"
+  },
+  {
+    "question": "最大記憶體容量是多少？",
+    "expected_answer": "Up to 64GB DDR5 5600MHz",
+    "type": "exact"
+  },
+  {
+    "question": "螢幕解析度是多少？",
+    "expected_answer": "2560x1600",
+    "type": "exact"
+  },
+  {
+    "question": "電池容量是多少？",
+    "expected_answer": "99Wh",
+    "type": "exact"
+  },
+  {
+    "question": "變壓器功率是多少？",
+    "expected_answer": "330W",
+    "type": "exact"
+  },
+  {
+    "question": "這台筆電重量是多少？",
+    "expected_answer": "約 2.5 kg",
+    "type": "exact"
+  },
+
+  {
+    "question": "這台用的是哪顆處理器？",
+    "expected_answer": "Intel Core Ultra 9 Processor 275HX",
+    "type": "paraphrase"
+  },
+  {
+    "question": "顯示卡是哪一張？",
+    "expected_answer": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "type": "paraphrase"
+  },
+  {
+    "question": "最大可以裝多少 RAM？",
+    "expected_answer": "Up to 64GB DDR5 5600MHz",
+    "type": "paraphrase"
+  },
+  {
+    "question": "這台筆電的電池大小？",
+    "expected_answer": "99Wh",
+    "type": "paraphrase"
+  },
+
+  {
+    "question": "這台 laptop 的 GPU 是什麼？",
+    "expected_answer": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "type": "mix"
+  },
+  {
+    "question": "RAM size 最大是多少？",
+    "expected_answer": "Up to 64GB DDR5 5600MHz",
+    "type": "mix"
+  },
+  {
+    "question": "Does this laptop support Windows 11 Pro？",
+    "expected_answer": "Yes, it supports Windows 11 Pro",
+    "type": "mix"
+  },
+
+  {
+    "question": "這台筆電顯示效果如何？",
+    "expected_answer": "16 吋 OLED 2560x1600 240Hz 高更新率螢幕，支援 HDR 與廣色域",
+    "type": "fuzzy"
+  },
+  {
+    "question": "這台適合玩高效能遊戲嗎？",
+    "expected_answer": "是，因為搭載 RTX 5090 GPU 與高效能 CPU",
+    "type": "fuzzy"
+  },
+
+  {
+    "question": "這台的 CPU 和 GPU 規格是什麼？",
+    "expected_answer": "Intel Core Ultra 9 275HX + NVIDIA GeForce RTX 5090 Laptop GPU",
+    "type": "multi"
+  },
+  {
+    "question": "這台的顯示器規格與刷新率是多少？",
+    "expected_answer": "16 吋 OLED 2560x1600，240Hz",
+    "type": "multi"
+  },
+
+  {
+    "question": "這台筆電支援 5G 行動網路嗎？",
+    "expected_answer": "根據目前資料無法確認",
+    "type": "negative"
+  },
+  {
+  "question": "今天天氣如何？",
+  "expected_answer": "我只能回答這台筆電的規格問題",
+  "type": "out_of_scope"
+}
+]
