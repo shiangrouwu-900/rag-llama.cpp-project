@@ -4,6 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 import numpy as np
+import os
 
 from rag.chunking import build_chunks
 from rag.embedding import load_embedding_model, build_embeddings
@@ -13,7 +14,7 @@ from rag.generation import load_llm, build_prompt, generate_stream
 
 TOP_K = 3
 MODEL_NAME = "qwen2.5-1.5b.q4_k_m"
-MODEL_PATH = "models/qwen2.5-1.5b.q4_k_m.gguf"
+MODEL_PATH = os.getenv("MODEL_PATH")
 N_GPU_LAYERS = 20
 
 TEST_DATA_PATH = "data/test_data.json"
