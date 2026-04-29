@@ -1,5 +1,5 @@
 # test_generation.py
-
+import os
 from rag.generation import load_llm, build_prompt, generate_stream
 
 cloud_model_path = os.getenv("MODEL_PATH")
