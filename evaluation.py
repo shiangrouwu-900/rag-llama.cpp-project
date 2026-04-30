@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import os
 
-from rag.chunking import build_chunks
+from rag.chunking import load_product_data, build_chunks
 from rag.embedding import load_embedding_model, build_embeddings
 from rag.retrieval import retrieve
 from rag.generation import load_llm, build_prompt, generate_stream
@@ -39,7 +39,8 @@ def main():
     embedding_model = load_embedding_model()
 
     print("建立 chunks / embeddings...")
-    chunks = build_chunks(PRODUCT_DATA_PATH)
+    product_data = load_product_data(PRODUCT_DATA_PATH)
+    chunks = build_chunks(product_data)
     embeddings = build_embeddings(chunks, embedding_model)
 
     print("載入 LLM...")
