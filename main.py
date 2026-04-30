@@ -5,7 +5,7 @@ from pathlib import Path
 from rag.embedding import load_embedding_model
 from rag.retrieval import load_index, retrieve
 from rag.generation import load_llm, build_prompt, generate_stream
-from build_index import main as build_index_main
+from rag.build_index import main as build_index_main
 
 
 STORAGE_DIR = "storage"
