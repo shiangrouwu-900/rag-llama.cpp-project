@@ -1,263 +1,360 @@
-[
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "OS",
-    "content": {
-      "options": [
-        "Windows 11 Pro",
-        "Windows 11 Home",
-        "UEFI Shell OS"
+{
+  "family": "AORUS MASTER 16 AM6H",
+  "models": ["BZH", "BYH", "BXH"],
+  "specs": [ 
+    {
+      "category": "OS",
+      "zh_name": "作業系統",
+      "aliases": [
+        "作業系統", "系統", "OS", "作業環境", 
+        "operating system", "Windows", "Windows 11", 
+        "Win11", "系統版本", "出廠系統", "內建系統"
       ],
-      "note": "GIGABYTE recommends Windows 11 Pro for business."
-    }
-  },
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "CPU",
-    "content": {
-      "name": "Intel Core Ultra 9 Processor 275HX",
-      "cache": "36MB",
-      "clock": "up to 5.4 GHz",
-      "cores": 24,
-      "threads": 24
-    }
-  },
-  {
-    "model": "BZH",
-    "category": "GPU",
-    "content": {
-      "model": "NVIDIA GeForce RTX 5090 Laptop GPU",
-      "memory": "24GB GDDR7",
-      "power": "175W",
-      "clock": {
-        "ai_boost": "1797 MHz",
-        "boost_clock": "1597 MHz",
-        "oc": "+200 MHz"
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "options": [
+          "Windows 11 Pro",
+          "Windows 11 Home",
+          "UEFI Shell OS"
+        ],
+        "note": "GIGABYTE recommends Windows 11 Pro for business."
       }
     },
-    "disclaimer": "May vary by scenario"
-  },
-  {
-    "model": "BYH",
-    "category": "GPU",
-    "content": {
-      "model": "NVIDIA GeForce RTX 5080 Laptop GPU",
-      "memory": "16GB GDDR7",
-      "power": "175W",
-      "clock": {
-        "ai_boost": "1902 MHz",
-        "boost_clock": "1702 MHz",
-        "oc": "+200 MHz"
+    {
+      "category": "CPU",
+      "zh_name": "中央處理器",
+      "aliases":[
+        "中央處理器", "處理器", "CPU", "processor", 
+        "Intel", "Core Ultra", "核心", 
+        "執行緒", "時脈", "快取"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "name": "Intel Core Ultra 9 Processor 275HX",
+        "cache": "36MB",
+        "clock": "up to 5.4 GHz",
+        "cores": 24,
+        "threads": 24
       }
     },
-    "metadata": {
-        "disclaimer": ["May vary by scenario"]
-    }
-  },
-  {
-    "model": "BXH",
-    "category": "GPU",
-    "content": {
-      "model": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
-      "memory": "12GB GDDR7",
-      "power": "140W",
-      "clock": {
-        "ai_boost": "1962 MHz",
-        "boost_clock": "1762 MHz",
-        "oc": "+200 MHz"
-      }
-    },
-    "disclaimer": "May vary by scenario"
-  },
-  {
-  "models": ["BZH", "BYH", "BXH"],
-  "category": "Display",
-  "content": {
-    "size": "16 inch",
-    "aspect_ratio": "16:10",
-    "panel": "OLED",
-    "resolution_name": "WQXGA",
-    "resolution": "2560x1600",
-    "refresh_rate": "240Hz",
-    "response_time": "1ms",
-    "color_gamut": "DCI-P3 100%",
-    "brightness": "500 nits (peak)",
-    "contrast_ratio": "1000000:1"
-  },
-  "features": [
-    "NVIDIA G-SYNC",
-    "NVIDIA Advanced Optimus",
-    "VESA DisplayHDR True Black 500",
-    "VESA ClearMR 10000",
-    "Pantone Validated",
-    "TÜV Rheinland Low Blue Light",
-    "Dolby Vision"
-  ]
-},
-{
-  "models": ["BZH", "BYH", "BXH"],
-  "category": "Memory",
-  "content": {
-    "max_capacity": "Up to 64GB",
-    "type": "DDR5",
-    "speed": "5600MHz",
-    "slots": "2x SO-DIMM"
-  },
-  "expandable": true
-},
-{
-  "models": ["BZH", "BYH", "BXH"],
-  "category": "Storage",
-  "content": {
-    "slots": [
-      {
-        "count": 1,
-        "interface": "PCIe Gen5",
-        "form_factor": "M.2"
-      },
-      {
-        "count": 1,
-        "interface": "PCIe Gen4 x4",
-        "form_factor": "M.2"
-      }
-    ],
-    "max_capacity": "4TB",
-    "type": "PCIe NVMe M.2 SSD"
-  },
-  "metadata": {
-    "disclaimer": [
-      "Storage capacity may differ by country and region",
-      "Warranty exclusions apply",
-      "https://member.aorus.com/global/productwarranty"
-    ]
-  }
-},{
-  "models": ["BZH", "BYH", "BXH"],
-  "category": "Keyboard",
-  "content": {
-    "type": "Backlit Keyboard",
-    "backlight": {
-      "type": "RGB",
-      "zones": "3-zone"
-    },
-    "key_travel": "up to 1.7 mm"
-  },
-  "features": [
-    "N-Key rollover"
-  ]
-},
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Ports",
-    "content": {
-      "left_side": [
-        { "count": 1, "port": "DC in" },
-        { "count": 1, "port": "RJ-45" },
-        { "count": 1, "port": "HDMI 2.1" },
-        { "count": 1, "port": "USB Type-A", "standard": "USB 3.2 Gen2" },
-        {
-          "count": 1,
-          "port": "USB Type-C",
-          "standard": "Thunderbolt 5",
-          "supports": ["USB4", "DisplayPort 2.1", "Power Delivery 3.0"]
+    {
+      "category": "GPU",
+      "zh_name": "顯示晶片",
+      "aliases":[
+        "顯示晶片", "顯示卡", "顯卡", "GPU", 
+        "graphics", "graphics card", "NVIDIA", 
+        "RTX", "AI Boost", "顯存", "VRAM", "功耗"
+      ],
+      "applies_to": ["BZH"],
+      "value": {
+        "model": "NVIDIA GeForce RTX 5090 Laptop GPU",
+        "memory": "24GB GDDR7",
+        "power": "175W",
+        "clock": {
+          "ai_boost": "1797 MHz",
+          "boost_clock": "1597 MHz",
+          "oc": "+200 MHz"
         }
+      },
+      "metadata": {
+        "disclaimer": ["May vary by scenario"]
+      }
+    },
+    {
+      "category": "GPU",
+      "zh_name": "顯示晶片",
+      "aliases":[
+        "顯示晶片", "顯示卡", "顯卡", "GPU", 
+        "graphics", "graphics card", "NVIDIA", 
+        "RTX", "AI Boost", "顯存", "VRAM", "功耗"
       ],
-      "right_side": [
-        { "count": 1, "port": "USB Type-A", "standard": "USB 3.2 Gen2" },
-        {
-          "count": 1,
-          "port": "USB Type-C",
-          "standard": "Thunderbolt 4",
-          "supports": ["USB4", "DisplayPort 1.4", "Power Delivery 3.0"]
-        },
-        { "count": 1, "port": "MicroSD", "standard": "UHS-II" },
-        { "count": 1, "port": "Audio Jack", "supports": ["microphone", "headphone combo"] }
-      ]
-    }
-  },
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Audio",
-    "content": {
-      "speakers": {
-        "count": 4,
-        "power_each": "2W"
+      "applies_to": ["BYH"],
+      "value": {
+        "model": "NVIDIA GeForce RTX 5080 Laptop GPU",
+        "memory": "16GB GDDR7",
+        "power": "175W",
+        "clock": {
+          "ai_boost": "1902 MHz",
+          "boost_clock": "1702 MHz",
+          "oc": "+200 MHz"
+        }
       },
-      "microphone": true
+      "metadata": {
+          "disclaimer": ["May vary by scenario"]
+      }
+    },
+    {
+      "category": "GPU",
+      "zh_name": "顯示晶片",
+      "aliases":[
+        "顯示晶片", "顯示卡", "顯卡", "GPU", 
+        "graphics", "graphics card", "NVIDIA", 
+        "RTX", "AI Boost", "顯存", "VRAM", "功耗"
+      ],
+      "applies_to": ["BXH"],
+      "value": {
+        "model": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "memory": "12GB GDDR7",
+        "power": "140W",
+        "clock": {
+          "ai_boost": "1962 MHz",
+          "boost_clock": "1762 MHz",
+          "oc": "+200 MHz"
+        }
+      },
+      "metadata": {
+        "disclaimer": ["May vary by scenario"]
+      }
+    },
+    {
+    "category": "Display",
+    "zh_name": "顯示器",
+    "aliases":[
+      "顯示器", "螢幕", "顯示效果", 
+      "display", "OLED", "解析度", "更新率", 
+      "亮度", "色域", "HDR", "Dolby Vision"
+    ],
+    "applies_to": ["BZH", "BYH", "BXH"],
+    "value": {
+      "size": "16 inch",
+      "aspect_ratio": "16:10",
+      "panel": "OLED",
+      "resolution_name": "WQXGA",
+      "resolution": "2560x1600",
+      "refresh_rate": "240Hz",
+      "response_time": "1ms",
+      "color_gamut": "DCI-P3 100%",
+      "brightness": "500 nits (peak)",
+      "contrast_ratio": "1000000:1"
     },
     "features": [
-      "Dolby Atmos",
-      "Smart Amp Technology"
+      "NVIDIA G-SYNC",
+      "NVIDIA Advanced Optimus",
+      "VESA DisplayHDR True Black 500",
+      "VESA ClearMR 10000",
+      "Pantone Validated",
+      "TÜV Rheinland Low Blue Light",
+      "Dolby Vision"
     ]
   },
   {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Connectivity",
-    "content": {
-      "wifi": {
-        "standard": "Wi-Fi 7",
-        "protocol": "802.11be",
-        "antenna": "2x2"
-      },
-      "lan": "1G",
-      "bluetooth": "v5.4"
-    }
-  },
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Webcam",
-    "content": {
-      "camera": "FHD 1080p IR Webcam",
-      "microphone": "Built-in array microphone"
+    "category": "Memory",
+    "zh_name": "記憶體",
+    "aliases":[
+      "記憶體", "RAM", "memory", "DDR5", 
+      "容量", "最大容量", "插槽", "SO-DIMM", "頻率"
+    ],
+    "applies_to": ["BZH", "BYH", "BXH"],
+    "value": {
+      "max_capacity": "Up to 64GB",
+      "type": "DDR5",
+      "speed": "5600MHz",
+      "slots": "2x SO-DIMM"
     },
-    "features": [
-      "Windows Hello Face Authentication"
-    ]
+    "expandable": true
   },
   {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Security",
-    "content": {
-      "tpm": "Firmware-based TPM",
-      "supports": [
-        "Intel Platform Trust Technology",
-        "Intel PTT"
-      ]
-    }
-  },
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Battery",
-    "content": {
-      "type": "Li-ion",
-      "capacity": "99Wh"
-    }
-  },
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Adapter",
-    "content": {
-      "power": "330W",
-      "type": "AC Adapter"
-    }
-  },
-  {
-    "models": ["BZH", "BYH", "BXH"],
-    "category": "Physical",
-    "content": {
-      "dimensions": {
-        "width": "357 mm",
-        "depth": "254 mm",
-        "height": "23~29.9 mm"
-      },
-      "weight": "2.5 kg (approx)",
-      "color": "Dark Tide"
+    "category": "Storage",
+    "zh_name": "儲存裝置",
+    "aliases":[
+      "儲存裝置", "儲存", "硬碟", "SSD", 
+      "storage", "NVMe", "M.2", "PCIe", "容量", "最大容量"
+    ],
+    "applies_to": ["BZH", "BYH", "BXH"],
+    "value": {
+      "slots": [
+        "1x PCIe Gen5 M.2",
+        "1x PCIe Gen4 x4 M.2"
+      ],
+      "max_capacity": "4TB",
+      "type": "PCIe NVMe M.2 SSD"
     },
     "metadata": {
       "disclaimer": [
-        "Dimensions may vary depending on configuration, manufacturing process, and measurement method",
-        "Weight may vary depending on configuration, manufacturing process, and measurement method"
+        "Storage capacity may differ by country and region",
+        "Warranty exclusions apply",
+        "https://member.aorus.com/global/productwarranty"
       ]
     }
-  }
-]
+  },{
+    "category": "Keyboard",
+    "zh_name": "鍵盤種類",
+    "aliases":[
+      "鍵盤", "鍵盤種類", "keyboard", "背光鍵盤", 
+      "RGB", "三區 RGB", "鍵程", "N-Key"
+    ],
+    "applies_to": ["BZH", "BYH", "BXH"],
+    "value": {
+      "type": "Backlit Keyboard",
+      "backlight": {
+        "type": "RGB",
+        "zones": "3-zone"
+      },
+      "key_travel": "up to 1.7 mm"
+    },
+    "features": [
+      "N-Key rollover"
+    ]
+  },
+    {
+      "category": "Ports",
+      "zh_name": "連接埠",
+      "aliases":[
+        "連接埠", "接口", "I/O", "ports", 
+        "USB", "USB Type-A", "USB Type-C", 
+        "Thunderbolt", "HDMI", "RJ-45", "MicroSD", 
+        "Audio Jack"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "left_side": [
+          { "count": 1, "port": "DC in" },
+          { "count": 1, "port": "RJ-45" },
+          { "count": 1, "port": "HDMI 2.1" },
+          { "count": 1, "port": "USB Type-A", "standard": "USB 3.2 Gen2" },
+          {
+            "count": 1,
+            "port": "USB Type-C",
+            "standard": "Thunderbolt 5",
+            "supports": ["USB4", "DisplayPort 2.1", "Power Delivery 3.0"]
+          }
+        ],
+        "right_side": [
+          { "count": 1, "port": "USB Type-A", "standard": "USB 3.2 Gen2" },
+          {
+            "count": 1,
+            "port": "USB Type-C",
+            "standard": "Thunderbolt 4",
+            "supports": ["USB4", "DisplayPort 1.4", "Power Delivery 3.0"]
+          },
+          { "count": 1, "port": "MicroSD", "standard": "UHS-II" },
+          { "count": 1, "port": "Audio Jack", "supports": ["microphone", "headphone combo"] }
+        ]
+      }
+    },
+    {
+      "category": "Audio",
+      "zh_name": "音效",
+      "aliases":[
+        "音效", "audio", "喇叭", 
+        "揚聲器", "speaker", "Dolby Atmos", 
+        "杜比全景聲", "Smart Amp", "麥克風", 
+        "收音麥克風", "microphone"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "speakers": {
+          "count": 4,
+          "power_each": "2W"
+        },
+        "microphone": "exists"
+      },
+      "features": [
+        "Dolby Atmos",
+        "Smart Amp Technology"
+      ]
+    },
+    {
+      "category": "Connectivity",
+      "zh_name": "通訊",
+      "aliases":[
+        "通訊", "連線", "connectivity", "網路",
+        "Wi-Fi", "WiFi","wifi", "無線網路", "LAN", 
+         "乙太網路", "Bluetooth", "藍牙"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "wifi": {
+          "standard": "Wi-Fi 7",
+          "protocol": "802.11be",
+          "antenna": "2x2"
+        },
+        "lan": "1G",
+        "bluetooth": "v5.4"
+      }
+    },
+    {
+      "category": "Webcam",
+      "zh_name": "視訊鏡頭",
+      "aliases":[
+        "視訊鏡頭", "鏡頭", "視訊", "webcam", 
+        "camera", "攝影機", "IR Webcam", "FHD", 
+        "Windows Hello", "臉部辨識", "陣列麥克風"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "camera": "FHD 1080p IR Webcam",
+        "microphone": "Built-in array microphone"
+      },
+      "features": [
+        "Windows Hello Face Authentication"
+      ]
+    },
+    {
+      "category": "Security",
+      "zh_name": "安全裝置",
+      "aliases":[
+        "安全裝置", "安全", "security", "TPM", 
+        "Firmware TPM", "Intel PTT", 
+        "Platform Trust Technology", "安全晶片"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "tpm": "Firmware-based TPM",
+        "supports": [
+          "Intel Platform Trust Technology",
+          "Intel PTT"
+        ]
+      }
+    },
+    {
+      "category": "Battery",
+      "zh_name": "電池",
+      "aliases":[
+        "電池", "battery", "電池容量", 
+        "Wh", "鋰電池", "Li-ion"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "type": "Li-ion",
+        "capacity": "99Wh"
+      }
+    },
+    {
+      "category": "Adapter",
+      "zh_name": "變壓器",
+      "aliases":[
+        "變壓器", "電源變壓器", "adapter", 
+        "AC Adapter", "電源供應器", "充電器", 
+        "功率", "瓦數", "W"
+      ],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "power": "330W",
+        "type": "AC Adapter"
+      }
+    },
+    {
+      "category": "Physical",
+      "zh_name": "外觀與尺寸",
+      "aliases":[
+        "實體", "外觀", "機身", "尺寸", 
+        "長寬高", "寬度", "深度", "高度", "重量", "顏色"],
+      "applies_to": ["BZH", "BYH", "BXH"],
+      "value": {
+        "dimensions": {
+          "width": "357 mm",
+          "depth": "254 mm",
+          "height": "23~29.9 mm"
+        },
+        "weight": "2.5 kg (approx)",
+        "color": "Dark Tide"
+      },
+      "metadata": {
+        "disclaimer": [
+          "Dimensions may vary depending on configuration, manufacturing process, and measurement method",
+          "Weight may vary depending on configuration, manufacturing process, and measurement method"
+        ]
+      }
+    }
+  ]}
