@@ -4,10 +4,12 @@ import json
 import numpy as np
 from pathlib import Path
 
-from rag.chunking import build_chunks
+from rag.chunking import load_product_data, build_chunks
 from rag.embedding import load_embedding_model, build_embeddings
 from rag.retrieval import retrieve
 from rag.generation import load_llm, build_prompt, generate_stream
+
+PRODUCT_DATA_PATH = "data/product_info.json"
 
 
 def save_artifacts(chunks, embeddings, output_dir="storage"):
@@ -22,7 +24,8 @@ def save_artifacts(chunks, embeddings, output_dir="storage"):
 def main():
     embedding_model = load_embedding_model()
 
-    chunks = build_chunks("data/product_info.json")
+    product_data = load_product_data(PRODUCT_DATA_PATH)
+    chunks = build_chunks(product_data)
     embeddings = build_embeddings(chunks, embedding_model)
     save_artifacts(chunks, embeddings, "storage")
 
