@@ -2,6 +2,7 @@ import time
 from llama_cpp import Llama
 
 
+
 def load_llm(
     model_path="models/qwen2.5-1.5b.q4_k_m.gguf",
     n_ctx=2048,
@@ -23,12 +24,12 @@ def build_prompt(query, retrieved_results):
         for i, r in enumerate(retrieved_results)
     )
 
-    return f"""你是 GIGABYTE AORUS MASTER 16 AM6H 產品規格 AI 助手。
+    return f"""你是產品規格問答系統。
 
-請嚴格根據下方「產品資料」回答使用者問題。
-如果資料中沒有答案，請回答「根據目前資料無法確認」，不要自行編造。
-如果遇到跟產品規格無關的問題，請回答「我只能回答規格問題」，不要回應無關問題。
-請使用繁體中文回答；若使用者用英文提問，也可以用英文回答。
+根據產品資料回答。
+資料不足時，只輸出：根據目前資料無法確認
+非產品規格問題時，只輸出：我只能回答規格問題
+禁止反問。禁止自我檢查。禁止重複規則。禁止輸出答案以外的文字。
 
 產品資料：
 {context}
@@ -40,20 +41,32 @@ def build_prompt(query, retrieved_results):
 """
 
 
-def generate_stream(llm, prompt, max_tokens=256):
+def generate_stream(llm, prompt, max_tokens=64):
     start_time = time.perf_counter()
     first_token_time = None
     output_text = ""
     token_count = 0
 
     stream = llm(
-        prompt,
-        max_tokens=max_tokens,
-        temperature=0.1,
-        top_p=0.9,
-        stop=["使用者問題：", "\n\n使用者："],
-        stream=True,
-    )
+    prompt,
+    max_tokens=max_tokens,
+    temperature=0.0,
+    top_p=1.0,
+    stop=[
+        "\n使用者問題：",
+        "\n產品資料：",
+        "\n回答：",
+        "\n請確認",
+        "請確認回答是否符合規則",
+        "是的。",
+        "如果問題與產品規格無關",
+        "如果「產品資料」",
+        "請問還有其他問題",
+        "根據目前資料無法確認其他規格。",
+        "我只能回答規格問題。"
+    ],
+    stream=True,
+)
 
     for chunk in stream:
         token = chunk["choices"][0]["text"]
