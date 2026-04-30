@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from build_index import main as build_index_main
+from rag.build_index import main as build_index_main
 from rag.embedding import load_embedding_model
 from rag.generation import build_prompt, generate_stream, load_llm
 from rag.retrieval import load_index, retrieve
