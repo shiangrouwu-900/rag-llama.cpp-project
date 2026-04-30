@@ -9,10 +9,10 @@ def main():
     embeddings, chunks = load_index("storage")
 
     test_queries = [
-        "AORUS MASTER 16 AM6H 的 CPU 是什麼？",
-        "這台筆電支援多少記憶體？",
-        "What GPU does AORUS MASTER 16 AM6H use?",
-        "螢幕規格是什麼？",
+        "AORUS MASTER 16 BXH 的 GPU 最大顯示功耗是多少？",
+        "BZH、BYH、BXH 這三個版本的處理器有不同嗎？",
+        "Does AORUS MASTER 16 AM6H support Windows 11 Pro？",
+        "AORUS MASTER 16 AM6H 的無線網路、藍牙、網路孔與視訊鏡頭規格是什麼？",
     ]
 
     for query in test_queries:
