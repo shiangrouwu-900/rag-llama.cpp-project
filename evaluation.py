@@ -1,15 +1,13 @@
 # rag/evaluation.py
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 
-import numpy as np
-import os
-
-from rag.chunking import build_chunks
-from rag.embedding import load_embedding_model, build_embeddings
-from rag.retrieval import retrieve
-from rag.generation import load_llm, build_prompt, generate_stream
+from rag.build_index import main as build_index_main
+from rag.embedding import load_embedding_model
+from rag.generation import build_prompt, generate_stream, load_llm
+from rag.retrieval import load_index, retrieve
 
 
 TOP_K = 3
@@ -18,8 +16,9 @@ MODEL_PATH = os.getenv("MODEL_PATH")
 N_GPU_LAYERS = 20
 
 TEST_DATA_PATH = "data/test_data.json"
-PRODUCT_DATA_PATH = "data/product_info.json"
+INDEX_DIR = "storage"
 OUTPUT_PATH = "storage/evaluation_records.jsonl"
+REBUILD_INDEX = os.getenv("REBUILD_INDEX", "0") == "1"
 
 
 def load_test_data(path=TEST_DATA_PATH):
@@ -34,13 +33,48 @@ def save_jsonl(record, path=OUTPUT_PATH):
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
+def ensure_index(index_dir=INDEX_DIR, rebuild=REBUILD_INDEX):
+    """
+    evaluation.py 不再自行 build chunks / embeddings。
+    需要 index 時，統一交給 build_index.py 建立，再由 retrieval.py 載入。
+    """
+    chunks_path = Path(index_dir) / "chunks.json"
+    embeddings_path = Path(index_dir) / "embeddings.npy"
+
+    if rebuild or not chunks_path.exists() or not embeddings_path.exists():
+        print("找不到 index，或指定 REBUILD_INDEX=1，開始執行 build_index.py...")
+        build_index_main()
+
+    if not chunks_path.exists() or not embeddings_path.exists():
+        raise FileNotFoundError(
+            f"index 建立失敗，請確認 {chunks_path} 與 {embeddings_path} 是否存在。"
+        )
+
+
+def validate_model_path(model_path):
+    if not model_path:
+        raise ValueError(
+            "MODEL_PATH 尚未設定。請先設定環境變數，例如：\n"
+            "export MODEL_PATH=/content/drive/MyDrive/rag_models/qwen2.5-1.5b.q4_k_m.gguf"
+        )
+
+    if not Path(model_path).exists():
+        raise FileNotFoundError(f"找不到模型檔案：{model_path}")
+
+
 def main():
+    validate_model_path(MODEL_PATH)
+
+    print("確認 / 建立 index...")
+    ensure_index(INDEX_DIR)
+
+    print("載入 index...")
+    embeddings, chunks = load_index(INDEX_DIR)
+    print(f"Chunks 數量: {len(chunks)}")
+    print(f"Embeddings shape: {embeddings.shape}")
+
     print("載入 embedding model...")
     embedding_model = load_embedding_model()
-
-    print("建立 chunks / embeddings...")
-    chunks = build_chunks(PRODUCT_DATA_PATH)
-    embeddings = build_embeddings(chunks, embedding_model)
 
     print("載入 LLM...")
     llm = load_llm(
@@ -85,6 +119,7 @@ def main():
             "output_tokens": metrics["output_tokens"],
             "top_k": TOP_K,
             "model": MODEL_NAME,
+            "model_path": MODEL_PATH,
             "n_gpu_layers": N_GPU_LAYERS,
         }
 
