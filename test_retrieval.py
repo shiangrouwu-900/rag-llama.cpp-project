@@ -1,12 +1,22 @@
-# test_retrieval.py
-
-from rag.embedding import load_embedding_model
-from rag.retrieval import load_index, retrieve
+from rag.chunking import load_product_data, build_chunks
+from rag.embedding import load_embedding_model, build_embeddings
+from rag.retrieval import retrieve
 
 
 def main():
+    print("載入產品資料...")
+    product_data = load_product_data("data/product_info.json")
+
+    print("建立 chunks...")
+    chunks = build_chunks(product_data)
+    print(f"Chunks 數量: {len(chunks)}")
+
+    print("載入 embedding model...")
     model = load_embedding_model()
-    embeddings, chunks = load_index("storage")
+
+    print("現場建立 embeddings...")
+    embeddings = build_embeddings(chunks, model)
+    print(f"Embeddings shape: {embeddings.shape}")
 
     test_queries = [
         "AORUS MASTER 16 BXH 的 GPU 最大顯示功耗是多少？",
@@ -32,8 +42,10 @@ def main():
 
             print(f"\nTop {i}")
             print(f"Score: {result['score']:.4f}")
-            print(f"Chunk ID: {chunk.get('chunk_id')}")
-            print(f"Category: {chunk.get('metadata', {}).get('category')}")
+            print(f"Chunk ID: {chunk.get('id')}")
+            print(f"Type: {chunk.get('type')}")
+            print(f"Category: {chunk.get('category')}")
+            print(f"Models: {chunk.get('models')}")
             print("Text:")
             print(chunk["text"][:800])
 
