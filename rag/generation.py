@@ -2,19 +2,41 @@ import time
 from llama_cpp import Llama
 
 
+#def load_llm(
+#    model_path="models/qwen2.5-1.5b.q4_k_m.gguf",
+#    n_ctx=2048,
+#    n_gpu_layers=20,
+#    n_threads=4,
+#):
+#    return Llama(
+#        model_path=model_path,
+#        n_ctx=n_ctx,
+#        n_gpu_layers=n_gpu_layers,
+#        n_threads=n_threads,
+#        #verbose=False,
+#        verbose=True,
+#    )
 def load_llm(
-    model_path="models/qwen2.5-1.5b.q4_k_m.gguf",
+    model_path=None,
     n_ctx=2048,
-    n_gpu_layers=20,
+    n_gpu_layers=-1,
     n_threads=4,
+    verbose=True,
 ):
+    model_path = model_path or os.getenv("MODEL_PATH")
+
+    if not model_path:
+        raise ValueError("MODEL_PATH 未設定，請設定 GGUF 模型路徑")
+
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"找不到模型檔案：{model_path}")
+
     return Llama(
         model_path=model_path,
         n_ctx=n_ctx,
         n_gpu_layers=n_gpu_layers,
         n_threads=n_threads,
-        #verbose=False,
-        verbose=True,
+        verbose=verbose,
     )
 
 
