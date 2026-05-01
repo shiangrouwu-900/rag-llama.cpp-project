@@ -13,7 +13,8 @@ def load_llm(
         n_ctx=n_ctx,
         n_gpu_layers=n_gpu_layers,
         n_threads=n_threads,
-        verbose=False,
+        #verbose=False,
+        verbose=True,
     )
 
 
