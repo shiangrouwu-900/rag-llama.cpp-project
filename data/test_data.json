@@ -1,112 +1,107 @@
 [
   {
-    "question": "這台筆電的 CPU 是什麼？",
-    "expected_answer": "Intel Core Ultra 9 Processor 275HX",
+    "question": "AORUS MASTER 16 AM6H 的 BZH、BYH、BXH 共同使用哪一顆 CPU？",
+    "expected_answer": "BZH、BYH、BXH 共同使用 Intel Core Ultra 9 Processor 275HX，36MB cache，最高 5.4 GHz，24 cores，24 threads。",
     "type": "exact"
   },
   {
-    "question": "這台的 GPU 型號？",
-    "expected_answer": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "question": "AORUS MASTER 16 BZH 的 GPU 型號與顯示記憶體是多少？",
+    "expected_answer": "AORUS MASTER 16 BZH 使用 NVIDIA GeForce RTX 5090 Laptop GPU，顯示記憶體為 24GB GDDR7。",
     "type": "exact"
   },
   {
-    "question": "支援的作業系統有哪些？",
-    "expected_answer": "Windows 11 Pro, Windows 11 Home, UEFI Shell OS",
+    "question": "AORUS MASTER 16 BYH 的 GPU 型號與顯示記憶體是多少？",
+    "expected_answer": "AORUS MASTER 16 BYH 使用 NVIDIA GeForce RTX 5080 Laptop GPU，顯示記憶體為 16GB GDDR7。",
     "type": "exact"
   },
   {
-    "question": "最大記憶體容量是多少？",
-    "expected_answer": "Up to 64GB DDR5 5600MHz",
+    "question": "AORUS MASTER 16 BXH 的 GPU 最大顯示功耗是多少？",
+    "expected_answer": "AORUS MASTER 16 BXH 的 GPU 最大顯示功耗為 140W。",
     "type": "exact"
   },
   {
-    "question": "螢幕解析度是多少？",
-    "expected_answer": "2560x1600",
+    "question": "AORUS MASTER 16 AM6H 支援哪些作業系統選項？",
+    "expected_answer": "支援 Windows 11 Pro、Windows 11 Home、UEFI Shell OS；其中 GIGABYTE recommends Windows 11 Pro for business。",
     "type": "exact"
   },
   {
-    "question": "電池容量是多少？",
-    "expected_answer": "99Wh",
+    "question": "AORUS MASTER 16 AM6H 的螢幕解析度、更新率與面板類型是什麼？",
+    "expected_answer": "螢幕為 16 inch、16:10、OLED、WQXGA，解析度 2560x1600，更新率 240Hz。",
     "type": "exact"
   },
   {
-    "question": "變壓器功率是多少？",
-    "expected_answer": "330W",
+    "question": "AORUS MASTER 16 AM6H 的記憶體最大容量、類型、速度與插槽是什麼？",
+    "expected_answer": "記憶體最高支援 Up to 64GB，類型為 DDR5，速度 5600MHz，插槽為 2x SO-DIMM。",
     "type": "exact"
   },
   {
-    "question": "這台筆電重量是多少？",
-    "expected_answer": "約 2.5 kg",
+    "question": "AORUS MASTER 16 AM6H 的電池容量與變壓器功率是多少？",
+    "expected_answer": "電池為 Li-ion 99Wh，變壓器為 330W AC Adapter。",
     "type": "exact"
   },
-
   {
-    "question": "這台用的是哪顆處理器？",
-    "expected_answer": "Intel Core Ultra 9 Processor 275HX",
+    "question": "BZH、BYH、BXH 這三個版本的處理器有不同嗎？",
+    "expected_answer": "沒有不同。BZH、BYH、BXH 共同使用 Intel Core Ultra 9 Processor 275HX。",
     "type": "paraphrase"
   },
   {
-    "question": "顯示卡是哪一張？",
-    "expected_answer": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "question": "BZH 這個版本配的是哪一張顯卡？VRAM 多大？",
+    "expected_answer": "BZH 配置 NVIDIA GeForce RTX 5090 Laptop GPU，VRAM 為 24GB GDDR7。",
     "type": "paraphrase"
   },
   {
-    "question": "最大可以裝多少 RAM？",
-    "expected_answer": "Up to 64GB DDR5 5600MHz",
+    "question": "這台 AM6H 最多能擴充到多少記憶體？是哪種規格？",
+    "expected_answer": "AORUS MASTER 16 AM6H 記憶體最高支援 Up to 64GB，使用 DDR5 5600MHz，2x SO-DIMM。",
     "type": "paraphrase"
   },
   {
-    "question": "這台筆電的電池大小？",
-    "expected_answer": "99Wh",
+    "question": "這台筆電的機身大小和重量大約是多少？",
+    "expected_answer": "尺寸為 357 mm x 254 mm x 23~29.9 mm，重量約 2.5 kg。",
     "type": "paraphrase"
   },
-
   {
-    "question": "這台 laptop 的 GPU 是什麼？",
-    "expected_answer": "NVIDIA GeForce RTX 5090 Laptop GPU",
+    "question": "AORUS MASTER 16 BZH 的 GPU memory 是多少？",
+    "expected_answer": "AORUS MASTER 16 BZH 的 GPU memory 是 24GB GDDR7。",
     "type": "mix"
   },
   {
-    "question": "RAM size 最大是多少？",
-    "expected_answer": "Up to 64GB DDR5 5600MHz",
+    "question": "Does AORUS MASTER 16 AM6H support Windows 11 Pro？",
+    "expected_answer": "Yes. AORUS MASTER 16 AM6H supports Windows 11 Pro, Windows 11 Home, and UEFI Shell OS。",
     "type": "mix"
   },
   {
-    "question": "Does this laptop support Windows 11 Pro？",
-    "expected_answer": "Yes, it supports Windows 11 Pro",
+    "question": "AORUS MASTER 16 AM6H 的 display refresh rate 是多少？",
+    "expected_answer": "AORUS MASTER 16 AM6H 的 display refresh rate 是 240Hz。",
     "type": "mix"
   },
-
   {
-    "question": "這台筆電顯示效果如何？",
-    "expected_answer": "16 吋 OLED 2560x1600 240Hz 高更新率螢幕，支援 HDR 與廣色域",
+    "question": "如果我在意螢幕流暢度和畫質，AORUS MASTER 16 AM6H 的螢幕規格有哪些重點？",
+    "expected_answer": "重點包含 16 inch OLED、2560x1600 WQXGA、240Hz、1ms、DCI-P3 100%、500 nits peak、1000000:1 contrast ratio，並支援 NVIDIA G-SYNC、Advanced Optimus、DisplayHDR True Black 500、Dolby Vision 等功能。",
     "type": "fuzzy"
   },
   {
-    "question": "這台適合玩高效能遊戲嗎？",
-    "expected_answer": "是，因為搭載 RTX 5090 GPU 與高效能 CPU",
+    "question": "如果我需要外接螢幕與高速傳輸，AORUS MASTER 16 AM6H 有哪些相關連接埠？",
+    "expected_answer": "相關連接埠包含 HDMI 2.1、Thunderbolt 5 USB Type-C（支援 USB4、DisplayPort 2.1、Power Delivery 3.0）、Thunderbolt 4 USB Type-C（支援 USB4、DisplayPort 1.4、Power Delivery 3.0），以及 USB Type-A。",
     "type": "fuzzy"
   },
-
   {
-    "question": "這台的 CPU 和 GPU 規格是什麼？",
-    "expected_answer": "Intel Core Ultra 9 275HX + NVIDIA GeForce RTX 5090 Laptop GPU",
+    "question": "BZH、BYH、BXH 的 GPU 型號、顯示記憶體與功耗差異是什麼？",
+    "expected_answer": "BZH 使用 RTX 5090 Laptop GPU、24GB GDDR7、175W；BYH 使用 RTX 5080 Laptop GPU、16GB GDDR7、175W；BXH 使用 RTX 5070 Ti Laptop GPU、12GB GDDR7、140W。",
     "type": "multi"
   },
   {
-    "question": "這台的顯示器規格與刷新率是多少？",
-    "expected_answer": "16 吋 OLED 2560x1600，240Hz",
+    "question": "AORUS MASTER 16 AM6H 的無線網路、藍牙、網路孔與視訊鏡頭規格是什麼？",
+    "expected_answer": "無線網路為 Wi-Fi 7 / 802.11be / 2x2，LAN 為 1G，Bluetooth 為 v5.4；視訊鏡頭為 FHD 1080p IR Webcam，內建 array microphone，支援 Windows Hello Face Authentication。",
     "type": "multi"
   },
-
   {
-    "question": "這台筆電支援 5G 行動網路嗎？",
-    "expected_answer": "根據目前資料無法確認",
+    "question": "AORUS MASTER 16 AM6H 是否有提供 5G 行動網路規格？",
+    "expected_answer": "根據目前資料無法確認。規格僅提供 Wi-Fi 7、1G LAN、Bluetooth v5.4，沒有提供 5G 行動網路規格。",
     "type": "negative"
   },
   {
-  "question": "今天天氣如何？",
-  "expected_answer": "我只能回答這台筆電的規格問題",
-  "type": "out_of_scope"
-}
+    "question": "今天天氣如何？",
+    "expected_answer": "我只能回答規格問題。",
+    "type": "out_of_scope"
+  }
 ]
