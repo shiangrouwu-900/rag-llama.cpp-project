@@ -1,5 +1,6 @@
 import time
 from llama_cpp import Llama
+import os
 
 
 #def load_llm(
