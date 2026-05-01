@@ -35,7 +35,6 @@ def build_prompt(query, retrieved_results):
 2. 不要輸出 JSON key、欄位路徑或英文字段名，例如 dimensions.width。
 3. 把規格整理成自然語句，例如「尺寸為 357 mm x 254 mm x 23~29.9 mm，重量約 2.5 kg。」
 4. 如果問題是在比較版本，先回答「有不同」或「沒有不同」，再列出共同點或差異。
-5. 如果資料不足，回答「目前資料沒有提供」。
 
 資料：
 {context}
