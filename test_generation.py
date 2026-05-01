@@ -43,7 +43,7 @@ Features: AI PC, high performance processor""",
     output_text, metrics = generate_stream(
         llm=llm,
         prompt=prompt,
-        max_tokens=128,
+        max_tokens=64,
     )
 
     print("\n" + "=" * 80)
