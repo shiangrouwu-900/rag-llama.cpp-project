@@ -17,30 +17,37 @@ def load_llm(
     )
 
 
+def get_prompt_content(chunk):
+    return chunk.get("content") or chunk.get("text", "")
+
+
 def build_prompt(query, retrieved_results):
     context = "\n\n".join(
-        f"[資料 {i+1}]\n{r['chunk']['text']}"
+        f"[資料 {i + 1}]\n{get_prompt_content(r['chunk'])}"
         for i, r in enumerate(retrieved_results)
     )
 
-    return f"""你是 GIGABYTE AORUS MASTER 16 AM6H 產品規格 AI 助手。
+    return f"""你是 GIGABYTE AORUS MASTER 16 AM6H 筆電規格助理。
 
-請嚴格根據下方「產品資料」回答使用者問題。
-如果資料中沒有答案，請回答「根據目前資料無法確認」，不要自行編造。
-如果遇到跟產品規格無關的問題，請回答「我只能回答規格問題」，不要回應無關問題。
-請使用繁體中文回答；若使用者用英文提問，也可以用英文回答。
+請只根據下方資料回答，不要補充資料外的內容。
+回答規則：
+1. 用繁體中文，全英問題則用英文回答，直接回答問題，保持簡短。
+2. 不要輸出 JSON key、欄位路徑或英文字段名，例如 dimensions.width。
+3. 把規格整理成自然語句，例如「尺寸為 357 mm x 254 mm x 23~29.9 mm，重量約 2.5 kg。」
+4. 如果問題是在比較版本，先回答「有不同」或「沒有不同」，再列出共同點或差異。
+5. 如果資料不足，回答「目前資料沒有提供」。
 
-產品資料：
+資料：
 {context}
 
-使用者問題：
+問題：
 {query}
 
 回答：
 """
 
 
-def generate_stream(llm, prompt, max_tokens=256):
+def generate_stream(llm, prompt, max_tokens=128):
     start_time = time.perf_counter()
     first_token_time = None
     output_text = ""
@@ -49,9 +56,15 @@ def generate_stream(llm, prompt, max_tokens=256):
     stream = llm(
         prompt,
         max_tokens=max_tokens,
-        temperature=0.1,
-        top_p=0.9,
-        stop=["使用者問題：", "\n\n使用者："],
+        temperature=0.0,
+        top_p=1.0,
+        stop=[
+            "\n問題：",
+            "\n資料：",
+            "\n回答：",
+            "\n請只根據",
+            "\n你是",
+        ],
         stream=True,
     )
 
