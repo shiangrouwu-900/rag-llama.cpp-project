@@ -32,6 +32,7 @@
 | `main.py` | 多輪對話主程式。 |
 | `evaluation.py` | 以測試集計算 TTFT/TPS。 |
 | `vram.py` | 量測 VRAM 使用量。 |
+| `vram_samples.csv` | VRAM 使用量紀錄。 |
 
 ### `rag/` 資料夾
 
