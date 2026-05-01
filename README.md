@@ -10,7 +10,7 @@
    依 `pyproject.toml` 建立環境。
 
 4. **指定模型路徑**  
-   透過環境變數 MODEL_PATH 指定要載入的 GGUF 模型檔案路徑
+   透過環境變數 MODEL_PATH 指定要載入的 GGUF 模型檔案路徑  
    量化後的qwen2.5-1.5b.q4_k_m.gguf模型：https://drive.google.com/file/d/1F4CNJoJ4SPFMIg8VZXk4bLuiI7vyhwUw/view?usp=sharing
 
 6. **執行 `main.py`**  
@@ -147,7 +147,7 @@
 
 - ### 4GB VRAM 使用量驗證
 
-為確認本專案符合 4GB VRAM 限制，使用 Colab T4 GPU 測量，包含載入 index、載入 embedding model、載入 LLM、retrieval 與 generation。
+為確認本專案符合 4GB VRAM 限制，使用 Colab T4 GPU 測量，包含載入 index、載入 embedding model、載入 LLM、retrieval 與 generation。  
 在本次 Colab T4 測試環境與目前設定下，峰值 VRAM 使用量低於 4GB。
 
 測試結果如下：
