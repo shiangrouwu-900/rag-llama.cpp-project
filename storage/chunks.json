@@ -1,0 +1,508 @@
+[
+  {
+    "id": "shared:OS",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "OS",
+    "zh_name": "作業系統",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的作業系統：選項為 Windows 11 Pro、Windows 11 Home、UEFI Shell OS，備註為 GIGABYTE recommends Windows 11 Pro for business.。",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的作業系統：選項為 Windows 11 Pro、Windows 11 Home、UEFI Shell OS，備註為 GIGABYTE recommends Windows 11 Pro for business.。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nOS\n作業系統\n作業系統 系統 OS 作業環境 operating system Windows Windows 11 Win11 系統版本 出廠系統 內建系統\n作業系統規格為何 作業系統是什麼 有沒有作業系統 支援作業系統嗎 作業系統多少 OS規格為何 OS是什麼 有沒有OS 支援OS嗎 OS多少 作業系統規格為何 作業系統是什麼 有沒有作業系統 支援作業系統嗎 作業系統多少 系統規格為何 系統是什麼 有沒有系統 支援系統嗎 系統多少 OS規格為何 OS是什麼 有沒有OS 支援OS嗎 OS多少 作業環境規格為何 作業環境是什麼 有沒有作業環境 支援作業環境嗎 作業環境多少 operating system規格為何 operating system是什麼 有沒有operating system 支援operating system嗎 operating system多少 Windows規格為何 Windows是什麼 有沒有Windows 支援Windows嗎 Windows多少 Windows 11規格為何 Windows 11是什麼 有沒有Windows 11 支援Windows 11嗎 Windows 11多少 Win11規格為何 Win11是什麼 有沒有Win11 支援Win11嗎 Win11多少 系統版本規格為何 系統版本是什麼 有沒有系統版本 支援系統版本嗎 系統版本多少 出廠系統規格為何 出廠系統是什麼 有沒有出廠系統 支援出廠系統嗎 出廠系統多少 內建系統規格為何 內建系統是什麼 有沒有內建系統 支援內建系統嗎 內建系統多少 BZH、BYH、BXH 的 作業系統 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n選項為 Windows 11 Pro、Windows 11 Home、UEFI Shell OS，備註為 GIGABYTE recommends Windows 11 Pro for business.\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:CPU",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "CPU",
+    "zh_name": "中央處理器",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的中央處理器：處理器為 Intel Core Ultra 9 Processor 275HX，24 核心，24 執行緒，最高 5.4 GHz，36MB 快取。",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的中央處理器：處理器為 Intel Core Ultra 9 Processor 275HX，24 核心，24 執行緒，最高 5.4 GHz，36MB 快取。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nCPU\n中央處理器\n中央處理器 處理器 CPU processor Intel Core Ultra 核心 執行緒 時脈 快取\n中央處理器規格為何 中央處理器是什麼 有沒有中央處理器 支援中央處理器嗎 中央處理器多少 CPU規格為何 CPU是什麼 有沒有CPU 支援CPU嗎 CPU多少 中央處理器規格為何 中央處理器是什麼 有沒有中央處理器 支援中央處理器嗎 中央處理器多少 處理器規格為何 處理器是什麼 有沒有處理器 支援處理器嗎 處理器多少 CPU規格為何 CPU是什麼 有沒有CPU 支援CPU嗎 CPU多少 processor規格為何 processor是什麼 有沒有processor 支援processor嗎 processor多少 Intel規格為何 Intel是什麼 有沒有Intel 支援Intel嗎 Intel多少 Core Ultra規格為何 Core Ultra是什麼 有沒有Core Ultra 支援Core Ultra嗎 Core Ultra多少 核心規格為何 核心是什麼 有沒有核心 支援核心嗎 核心多少 執行緒規格為何 執行緒是什麼 有沒有執行緒 支援執行緒嗎 執行緒多少 時脈規格為何 時脈是什麼 有沒有時脈 支援時脈嗎 時脈多少 快取規格為何 快取是什麼 有沒有快取 支援快取嗎 快取多少 BZH、BYH、BXH 的 中央處理器 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n型號為 Intel Core Ultra 9 Processor 275HX，快取為 36MB，時脈為 up to 5.4 GHz，核心為 24，執行緒為 24\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "specific:GPU:BZH",
+    "type": "specific",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "GPU",
+    "zh_name": "顯示晶片",
+    "models": [
+      "BZH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH 的顯示晶片：顯示晶片為 NVIDIA GeForce RTX 5090 Laptop GPU，24GB GDDR7，175W，AI Boost 1797 MHz，Boost Clock 1597 MHz。\n備註：May vary by scenario",
+    "text": "AORUS MASTER 16 AM6H BZH 的顯示晶片：顯示晶片為 NVIDIA GeForce RTX 5090 Laptop GPU，24GB GDDR7，175W，AI Boost 1797 MHz，Boost Clock 1597 MHz。\n備註：May vary by scenario",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH\nGPU\n顯示晶片\n顯示晶片 顯示卡 顯卡 GPU graphics graphics card NVIDIA RTX AI Boost 顯存 VRAM 功耗\n顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 顯示卡規格為何 顯示卡是什麼 有沒有顯示卡 支援顯示卡嗎 顯示卡多少 顯卡規格為何 顯卡是什麼 有沒有顯卡 支援顯卡嗎 顯卡多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 graphics規格為何 graphics是什麼 有沒有graphics 支援graphics嗎 graphics多少 graphics card規格為何 graphics card是什麼 有沒有graphics card 支援graphics card嗎 graphics card多少 NVIDIA規格為何 NVIDIA是什麼 有沒有NVIDIA 支援NVIDIA嗎 NVIDIA多少 RTX規格為何 RTX是什麼 有沒有RTX 支援RTX嗎 RTX多少 AI Boost規格為何 AI Boost是什麼 有沒有AI Boost 支援AI Boost嗎 AI Boost多少 顯存規格為何 顯存是什麼 有沒有顯存 支援顯存嗎 顯存多少 VRAM規格為何 VRAM是什麼 有沒有VRAM 支援VRAM嗎 VRAM多少 功耗規格為何 功耗是什麼 有沒有功耗 支援功耗嗎 功耗多少 BZH 的 顯示晶片 有不同嗎 BZH 有什麼差異 BZH 差在哪 比較 BZH\n型號為 NVIDIA GeForce RTX 5090 Laptop GPU，記憶體為 24GB GDDR7，功耗為 175W，時脈為 AI Boost為 1797 MHz，Boost Clock為 1597 MHz，OC為 +200 MHz\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "specific:GPU:BYH",
+    "type": "specific",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "GPU",
+    "zh_name": "顯示晶片",
+    "models": [
+      "BYH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BYH 的顯示晶片：顯示晶片為 NVIDIA GeForce RTX 5080 Laptop GPU，16GB GDDR7，175W，AI Boost 1902 MHz，Boost Clock 1702 MHz。\n備註：May vary by scenario",
+    "text": "AORUS MASTER 16 AM6H BYH 的顯示晶片：顯示晶片為 NVIDIA GeForce RTX 5080 Laptop GPU，16GB GDDR7，175W，AI Boost 1902 MHz，Boost Clock 1702 MHz。\n備註：May vary by scenario",
+    "search_text": "AORUS MASTER 16 AM6H\nBYH\nGPU\n顯示晶片\n顯示晶片 顯示卡 顯卡 GPU graphics graphics card NVIDIA RTX AI Boost 顯存 VRAM 功耗\n顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 顯示卡規格為何 顯示卡是什麼 有沒有顯示卡 支援顯示卡嗎 顯示卡多少 顯卡規格為何 顯卡是什麼 有沒有顯卡 支援顯卡嗎 顯卡多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 graphics規格為何 graphics是什麼 有沒有graphics 支援graphics嗎 graphics多少 graphics card規格為何 graphics card是什麼 有沒有graphics card 支援graphics card嗎 graphics card多少 NVIDIA規格為何 NVIDIA是什麼 有沒有NVIDIA 支援NVIDIA嗎 NVIDIA多少 RTX規格為何 RTX是什麼 有沒有RTX 支援RTX嗎 RTX多少 AI Boost規格為何 AI Boost是什麼 有沒有AI Boost 支援AI Boost嗎 AI Boost多少 顯存規格為何 顯存是什麼 有沒有顯存 支援顯存嗎 顯存多少 VRAM規格為何 VRAM是什麼 有沒有VRAM 支援VRAM嗎 VRAM多少 功耗規格為何 功耗是什麼 有沒有功耗 支援功耗嗎 功耗多少 BYH 的 顯示晶片 有不同嗎 BYH 有什麼差異 BYH 差在哪 比較 BYH\n型號為 NVIDIA GeForce RTX 5080 Laptop GPU，記憶體為 16GB GDDR7，功耗為 175W，時脈為 AI Boost為 1902 MHz，Boost Clock為 1702 MHz，OC為 +200 MHz\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "specific:GPU:BXH",
+    "type": "specific",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "GPU",
+    "zh_name": "顯示晶片",
+    "models": [
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BXH 的顯示晶片：顯示晶片為 NVIDIA GeForce RTX 5070 Ti Laptop GPU，12GB GDDR7，140W，AI Boost 1962 MHz，Boost Clock 1762 MHz。\n備註：May vary by scenario",
+    "text": "AORUS MASTER 16 AM6H BXH 的顯示晶片：顯示晶片為 NVIDIA GeForce RTX 5070 Ti Laptop GPU，12GB GDDR7，140W，AI Boost 1962 MHz，Boost Clock 1762 MHz。\n備註：May vary by scenario",
+    "search_text": "AORUS MASTER 16 AM6H\nBXH\nGPU\n顯示晶片\n顯示晶片 顯示卡 顯卡 GPU graphics graphics card NVIDIA RTX AI Boost 顯存 VRAM 功耗\n顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 顯示卡規格為何 顯示卡是什麼 有沒有顯示卡 支援顯示卡嗎 顯示卡多少 顯卡規格為何 顯卡是什麼 有沒有顯卡 支援顯卡嗎 顯卡多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 graphics規格為何 graphics是什麼 有沒有graphics 支援graphics嗎 graphics多少 graphics card規格為何 graphics card是什麼 有沒有graphics card 支援graphics card嗎 graphics card多少 NVIDIA規格為何 NVIDIA是什麼 有沒有NVIDIA 支援NVIDIA嗎 NVIDIA多少 RTX規格為何 RTX是什麼 有沒有RTX 支援RTX嗎 RTX多少 AI Boost規格為何 AI Boost是什麼 有沒有AI Boost 支援AI Boost嗎 AI Boost多少 顯存規格為何 顯存是什麼 有沒有顯存 支援顯存嗎 顯存多少 VRAM規格為何 VRAM是什麼 有沒有VRAM 支援VRAM嗎 VRAM多少 功耗規格為何 功耗是什麼 有沒有功耗 支援功耗嗎 功耗多少 BXH 的 顯示晶片 有不同嗎 BXH 有什麼差異 BXH 差在哪 比較 BXH\n型號為 NVIDIA GeForce RTX 5070 Ti Laptop GPU，記憶體為 12GB GDDR7，功耗為 140W，時脈為 AI Boost為 1962 MHz，Boost Clock為 1762 MHz，OC為 +200 MHz\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Display",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Display",
+    "zh_name": "顯示器",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的顯示器：螢幕規格為 16 inch，WQXGA，2560x1600，OLED，240Hz，1ms，DCI-P3 100%，500 nits (peak)。\n特色：NVIDIA G-SYNC、NVIDIA Advanced Optimus、VESA DisplayHDR True Black 500、VESA ClearMR 10000、Pantone Validated、TÜV Rheinland Low Blue Light、Dolby Vision",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的顯示器：螢幕規格為 16 inch，WQXGA，2560x1600，OLED，240Hz，1ms，DCI-P3 100%，500 nits (peak)。\n特色：NVIDIA G-SYNC、NVIDIA Advanced Optimus、VESA DisplayHDR True Black 500、VESA ClearMR 10000、Pantone Validated、TÜV Rheinland Low Blue Light、Dolby Vision",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nDisplay\n顯示器\n顯示器 螢幕 顯示效果 display OLED 解析度 更新率 亮度 色域 HDR Dolby Vision\n顯示器規格為何 顯示器是什麼 有沒有顯示器 支援顯示器嗎 顯示器多少 Display規格為何 Display是什麼 有沒有Display 支援Display嗎 Display多少 顯示器規格為何 顯示器是什麼 有沒有顯示器 支援顯示器嗎 顯示器多少 螢幕規格為何 螢幕是什麼 有沒有螢幕 支援螢幕嗎 螢幕多少 顯示效果規格為何 顯示效果是什麼 有沒有顯示效果 支援顯示效果嗎 顯示效果多少 display規格為何 display是什麼 有沒有display 支援display嗎 display多少 OLED規格為何 OLED是什麼 有沒有OLED 支援OLED嗎 OLED多少 解析度規格為何 解析度是什麼 有沒有解析度 支援解析度嗎 解析度多少 更新率規格為何 更新率是什麼 有沒有更新率 支援更新率嗎 更新率多少 亮度規格為何 亮度是什麼 有沒有亮度 支援亮度嗎 亮度多少 色域規格為何 色域是什麼 有沒有色域 支援色域嗎 色域多少 HDR規格為何 HDR是什麼 有沒有HDR 支援HDR嗎 HDR多少 Dolby Vision規格為何 Dolby Vision是什麼 有沒有Dolby Vision 支援Dolby Vision嗎 Dolby Vision多少 BZH、BYH、BXH 的 顯示器 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n尺寸為 16 inch，比例為 16:10，面板為 OLED，解析度等級為 WQXGA，解析度為 2560x1600，更新率為 240Hz，反應時間為 1ms，色域為 DCI-P3 100%，亮度為 500 nits (peak)，對比為 1000000:1\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Memory",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Memory",
+    "zh_name": "記憶體",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的記憶體：記憶體為 DDR5 5600MHz，2x SO-DIMM，最高支援 Up to 64GB。\n可擴充：是",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的記憶體：記憶體為 DDR5 5600MHz，2x SO-DIMM，最高支援 Up to 64GB。\n可擴充：是",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nMemory\n記憶體\n記憶體 RAM memory DDR5 容量 最大容量 插槽 SO-DIMM 頻率\n記憶體規格為何 記憶體是什麼 有沒有記憶體 支援記憶體嗎 記憶體多少 Memory規格為何 Memory是什麼 有沒有Memory 支援Memory嗎 Memory多少 記憶體規格為何 記憶體是什麼 有沒有記憶體 支援記憶體嗎 記憶體多少 RAM規格為何 RAM是什麼 有沒有RAM 支援RAM嗎 RAM多少 memory規格為何 memory是什麼 有沒有memory 支援memory嗎 memory多少 DDR5規格為何 DDR5是什麼 有沒有DDR5 支援DDR5嗎 DDR5多少 容量規格為何 容量是什麼 有沒有容量 支援容量嗎 容量多少 最大容量規格為何 最大容量是什麼 有沒有最大容量 支援最大容量嗎 最大容量多少 插槽規格為何 插槽是什麼 有沒有插槽 支援插槽嗎 插槽多少 SO-DIMM規格為何 SO-DIMM是什麼 有沒有SO-DIMM 支援SO-DIMM嗎 SO-DIMM多少 頻率規格為何 頻率是什麼 有沒有頻率 支援頻率嗎 頻率多少 BZH、BYH、BXH 的 記憶體 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n最大容量為 Up to 64GB，類型為 DDR5，速度為 5600MHz，插槽為 2x SO-DIMM\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Storage",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Storage",
+    "zh_name": "儲存裝置",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的儲存裝置：儲存裝置為 PCIe NVMe M.2 SSD，最高 4TB，插槽包含 1x PCIe Gen5 M.2、1x PCIe Gen4 x4 M.2。\n備註：Storage capacity may differ by country and region、Warranty exclusions apply、https://member.aorus.com/global/productwarranty",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的儲存裝置：儲存裝置為 PCIe NVMe M.2 SSD，最高 4TB，插槽包含 1x PCIe Gen5 M.2、1x PCIe Gen4 x4 M.2。\n備註：Storage capacity may differ by country and region、Warranty exclusions apply、https://member.aorus.com/global/productwarranty",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nStorage\n儲存裝置\n儲存裝置 儲存 硬碟 SSD storage NVMe M.2 PCIe 容量 最大容量\n儲存裝置規格為何 儲存裝置是什麼 有沒有儲存裝置 支援儲存裝置嗎 儲存裝置多少 Storage規格為何 Storage是什麼 有沒有Storage 支援Storage嗎 Storage多少 儲存裝置規格為何 儲存裝置是什麼 有沒有儲存裝置 支援儲存裝置嗎 儲存裝置多少 儲存規格為何 儲存是什麼 有沒有儲存 支援儲存嗎 儲存多少 硬碟規格為何 硬碟是什麼 有沒有硬碟 支援硬碟嗎 硬碟多少 SSD規格為何 SSD是什麼 有沒有SSD 支援SSD嗎 SSD多少 storage規格為何 storage是什麼 有沒有storage 支援storage嗎 storage多少 NVMe規格為何 NVMe是什麼 有沒有NVMe 支援NVMe嗎 NVMe多少 M.2規格為何 M.2是什麼 有沒有M.2 支援M.2嗎 M.2多少 PCIe規格為何 PCIe是什麼 有沒有PCIe 支援PCIe嗎 PCIe多少 容量規格為何 容量是什麼 有沒有容量 支援容量嗎 容量多少 最大容量規格為何 最大容量是什麼 有沒有最大容量 支援最大容量嗎 最大容量多少 BZH、BYH、BXH 的 儲存裝置 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n插槽為 1x PCIe Gen5 M.2、1x PCIe Gen4 x4 M.2，最大容量為 4TB，類型為 PCIe NVMe M.2 SSD\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Keyboard",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Keyboard",
+    "zh_name": "鍵盤種類",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的鍵盤種類：類型為 Backlit Keyboard，背光為 類型為 RGB，分區為 3-zone，鍵程為 up to 1.7 mm。\n特色：N-Key rollover",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的鍵盤種類：類型為 Backlit Keyboard，背光為 類型為 RGB，分區為 3-zone，鍵程為 up to 1.7 mm。\n特色：N-Key rollover",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nKeyboard\n鍵盤種類\n鍵盤 鍵盤種類 keyboard 背光鍵盤 RGB 三區 RGB 鍵程 N-Key\n鍵盤種類規格為何 鍵盤種類是什麼 有沒有鍵盤種類 支援鍵盤種類嗎 鍵盤種類多少 Keyboard規格為何 Keyboard是什麼 有沒有Keyboard 支援Keyboard嗎 Keyboard多少 鍵盤規格為何 鍵盤是什麼 有沒有鍵盤 支援鍵盤嗎 鍵盤多少 鍵盤種類規格為何 鍵盤種類是什麼 有沒有鍵盤種類 支援鍵盤種類嗎 鍵盤種類多少 keyboard規格為何 keyboard是什麼 有沒有keyboard 支援keyboard嗎 keyboard多少 背光鍵盤規格為何 背光鍵盤是什麼 有沒有背光鍵盤 支援背光鍵盤嗎 背光鍵盤多少 RGB規格為何 RGB是什麼 有沒有RGB 支援RGB嗎 RGB多少 三區 RGB規格為何 三區 RGB是什麼 有沒有三區 RGB 支援三區 RGB嗎 三區 RGB多少 鍵程規格為何 鍵程是什麼 有沒有鍵程 支援鍵程嗎 鍵程多少 N-Key規格為何 N-Key是什麼 有沒有N-Key 支援N-Key嗎 N-Key多少 BZH、BYH、BXH 的 鍵盤種類 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n類型為 Backlit Keyboard，背光為 類型為 RGB，分區為 3-zone，鍵程為 up to 1.7 mm\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Ports",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Ports",
+    "zh_name": "連接埠",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的連接埠：連接埠左側包含 1 個 DC in；1 個 RJ-45；1 個 HDMI 2.1；1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 5），支援 USB4、DisplayPort 2.1、Power Delivery 3.0；右側包含 1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 4），支援 USB4、DisplayPort 1.4、Power Delivery 3.0；1 個 MicroSD（UHS-II）；1 個 Audio Jack，支援 microphone、headphone combo。",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的連接埠：連接埠左側包含 1 個 DC in；1 個 RJ-45；1 個 HDMI 2.1；1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 5），支援 USB4、DisplayPort 2.1、Power Delivery 3.0；右側包含 1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 4），支援 USB4、DisplayPort 1.4、Power Delivery 3.0；1 個 MicroSD（UHS-II）；1 個 Audio Jack，支援 microphone、headphone combo。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nPorts\n連接埠\n連接埠 接口 I/O ports USB USB Type-A USB Type-C Thunderbolt HDMI RJ-45 MicroSD Audio Jack\n連接埠規格為何 連接埠是什麼 有沒有連接埠 支援連接埠嗎 連接埠多少 Ports規格為何 Ports是什麼 有沒有Ports 支援Ports嗎 Ports多少 連接埠規格為何 連接埠是什麼 有沒有連接埠 支援連接埠嗎 連接埠多少 接口規格為何 接口是什麼 有沒有接口 支援接口嗎 接口多少 I/O規格為何 I/O是什麼 有沒有I/O 支援I/O嗎 I/O多少 ports規格為何 ports是什麼 有沒有ports 支援ports嗎 ports多少 USB規格為何 USB是什麼 有沒有USB 支援USB嗎 USB多少 USB Type-A規格為何 USB Type-A是什麼 有沒有USB Type-A 支援USB Type-A嗎 USB Type-A多少 USB Type-C規格為何 USB Type-C是什麼 有沒有USB Type-C 支援USB Type-C嗎 USB Type-C多少 Thunderbolt規格為何 Thunderbolt是什麼 有沒有Thunderbolt 支援Thunderbolt嗎 Thunderbolt多少 HDMI規格為何 HDMI是什麼 有沒有HDMI 支援HDMI嗎 HDMI多少 RJ-45規格為何 RJ-45是什麼 有沒有RJ-45 支援RJ-45嗎 RJ-45多少 MicroSD規格為何 MicroSD是什麼 有沒有MicroSD 支援MicroSD嗎 MicroSD多少 Audio Jack規格為何 Audio Jack是什麼 有沒有Audio Jack 支援Audio Jack嗎 Audio Jack多少 BZH、BYH、BXH 的 連接埠 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n左側包含 1 個 DC in；1 個 RJ-45；1 個 HDMI 2.1；1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 5），支援 USB4、DisplayPort 2.1、Power Delivery 3.0，右側包含 1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 4），支援 USB4、DisplayPort 1.4、Power Delivery 3.0；1 個 MicroSD（UHS-II）；1 個 Audio Jack，支援 microphone、headphone combo\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Audio",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Audio",
+    "zh_name": "音效",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的音效：喇叭為 數量為 4，單顆功率為 2W，麥克風為 有。\n特色：Dolby Atmos、Smart Amp Technology",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的音效：喇叭為 數量為 4，單顆功率為 2W，麥克風為 有。\n特色：Dolby Atmos、Smart Amp Technology",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nAudio\n音效\n音效 audio 喇叭 揚聲器 speaker Dolby Atmos 杜比全景聲 Smart Amp 麥克風 收音麥克風 microphone\n音效規格為何 音效是什麼 有沒有音效 支援音效嗎 音效多少 Audio規格為何 Audio是什麼 有沒有Audio 支援Audio嗎 Audio多少 音效規格為何 音效是什麼 有沒有音效 支援音效嗎 音效多少 audio規格為何 audio是什麼 有沒有audio 支援audio嗎 audio多少 喇叭規格為何 喇叭是什麼 有沒有喇叭 支援喇叭嗎 喇叭多少 揚聲器規格為何 揚聲器是什麼 有沒有揚聲器 支援揚聲器嗎 揚聲器多少 speaker規格為何 speaker是什麼 有沒有speaker 支援speaker嗎 speaker多少 Dolby Atmos規格為何 Dolby Atmos是什麼 有沒有Dolby Atmos 支援Dolby Atmos嗎 Dolby Atmos多少 杜比全景聲規格為何 杜比全景聲是什麼 有沒有杜比全景聲 支援杜比全景聲嗎 杜比全景聲多少 Smart Amp規格為何 Smart Amp是什麼 有沒有Smart Amp 支援Smart Amp嗎 Smart Amp多少 麥克風規格為何 麥克風是什麼 有沒有麥克風 支援麥克風嗎 麥克風多少 收音麥克風規格為何 收音麥克風是什麼 有沒有收音麥克風 支援收音麥克風嗎 收音麥克風多少 microphone規格為何 microphone是什麼 有沒有microphone 支援microphone嗎 microphone多少 BZH、BYH、BXH 的 音效 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n喇叭為 數量為 4，單顆功率為 2W，麥克風為 有\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Connectivity",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Connectivity",
+    "zh_name": "通訊",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的通訊：Wi-Fi為 規格為 Wi-Fi 7，協定為 802.11be，天線為 2x2，有線網路為 1G，藍牙為 v5.4。",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的通訊：Wi-Fi為 規格為 Wi-Fi 7，協定為 802.11be，天線為 2x2，有線網路為 1G，藍牙為 v5.4。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nConnectivity\n通訊\n通訊 連線 connectivity 網路 Wi-Fi WiFi wifi 無線網路 LAN 乙太網路 Bluetooth 藍牙\n通訊規格為何 通訊是什麼 有沒有通訊 支援通訊嗎 通訊多少 Connectivity規格為何 Connectivity是什麼 有沒有Connectivity 支援Connectivity嗎 Connectivity多少 通訊規格為何 通訊是什麼 有沒有通訊 支援通訊嗎 通訊多少 連線規格為何 連線是什麼 有沒有連線 支援連線嗎 連線多少 connectivity規格為何 connectivity是什麼 有沒有connectivity 支援connectivity嗎 connectivity多少 網路規格為何 網路是什麼 有沒有網路 支援網路嗎 網路多少 Wi-Fi規格為何 Wi-Fi是什麼 有沒有Wi-Fi 支援Wi-Fi嗎 Wi-Fi多少 WiFi規格為何 WiFi是什麼 有沒有WiFi 支援WiFi嗎 WiFi多少 wifi規格為何 wifi是什麼 有沒有wifi 支援wifi嗎 wifi多少 無線網路規格為何 無線網路是什麼 有沒有無線網路 支援無線網路嗎 無線網路多少 LAN規格為何 LAN是什麼 有沒有LAN 支援LAN嗎 LAN多少 乙太網路規格為何 乙太網路是什麼 有沒有乙太網路 支援乙太網路嗎 乙太網路多少 Bluetooth規格為何 Bluetooth是什麼 有沒有Bluetooth 支援Bluetooth嗎 Bluetooth多少 藍牙規格為何 藍牙是什麼 有沒有藍牙 支援藍牙嗎 藍牙多少 BZH、BYH、BXH 的 通訊 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\nWi-Fi為 規格為 Wi-Fi 7，協定為 802.11be，天線為 2x2，有線網路為 1G，藍牙為 v5.4\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Webcam",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Webcam",
+    "zh_name": "視訊鏡頭",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的視訊鏡頭：鏡頭為 FHD 1080p IR Webcam，麥克風為 Built-in array microphone。\n特色：Windows Hello Face Authentication",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的視訊鏡頭：鏡頭為 FHD 1080p IR Webcam，麥克風為 Built-in array microphone。\n特色：Windows Hello Face Authentication",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nWebcam\n視訊鏡頭\n視訊鏡頭 鏡頭 視訊 webcam camera 攝影機 IR Webcam FHD Windows Hello 臉部辨識 陣列麥克風\n視訊鏡頭規格為何 視訊鏡頭是什麼 有沒有視訊鏡頭 支援視訊鏡頭嗎 視訊鏡頭多少 Webcam規格為何 Webcam是什麼 有沒有Webcam 支援Webcam嗎 Webcam多少 視訊鏡頭規格為何 視訊鏡頭是什麼 有沒有視訊鏡頭 支援視訊鏡頭嗎 視訊鏡頭多少 鏡頭規格為何 鏡頭是什麼 有沒有鏡頭 支援鏡頭嗎 鏡頭多少 視訊規格為何 視訊是什麼 有沒有視訊 支援視訊嗎 視訊多少 webcam規格為何 webcam是什麼 有沒有webcam 支援webcam嗎 webcam多少 camera規格為何 camera是什麼 有沒有camera 支援camera嗎 camera多少 攝影機規格為何 攝影機是什麼 有沒有攝影機 支援攝影機嗎 攝影機多少 IR Webcam規格為何 IR Webcam是什麼 有沒有IR Webcam 支援IR Webcam嗎 IR Webcam多少 FHD規格為何 FHD是什麼 有沒有FHD 支援FHD嗎 FHD多少 Windows Hello規格為何 Windows Hello是什麼 有沒有Windows Hello 支援Windows Hello嗎 Windows Hello多少 臉部辨識規格為何 臉部辨識是什麼 有沒有臉部辨識 支援臉部辨識嗎 臉部辨識多少 陣列麥克風規格為何 陣列麥克風是什麼 有沒有陣列麥克風 支援陣列麥克風嗎 陣列麥克風多少 BZH、BYH、BXH 的 視訊鏡頭 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n鏡頭為 FHD 1080p IR Webcam，麥克風為 Built-in array microphone\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Security",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Security",
+    "zh_name": "安全裝置",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的安全裝置：TPM為 Firmware-based TPM，支援為 Intel Platform Trust Technology、Intel PTT。",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的安全裝置：TPM為 Firmware-based TPM，支援為 Intel Platform Trust Technology、Intel PTT。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nSecurity\n安全裝置\n安全裝置 安全 security TPM Firmware TPM Intel PTT Platform Trust Technology 安全晶片\n安全裝置規格為何 安全裝置是什麼 有沒有安全裝置 支援安全裝置嗎 安全裝置多少 Security規格為何 Security是什麼 有沒有Security 支援Security嗎 Security多少 安全裝置規格為何 安全裝置是什麼 有沒有安全裝置 支援安全裝置嗎 安全裝置多少 安全規格為何 安全是什麼 有沒有安全 支援安全嗎 安全多少 security規格為何 security是什麼 有沒有security 支援security嗎 security多少 TPM規格為何 TPM是什麼 有沒有TPM 支援TPM嗎 TPM多少 Firmware TPM規格為何 Firmware TPM是什麼 有沒有Firmware TPM 支援Firmware TPM嗎 Firmware TPM多少 Intel PTT規格為何 Intel PTT是什麼 有沒有Intel PTT 支援Intel PTT嗎 Intel PTT多少 Platform Trust Technology規格為何 Platform Trust Technology是什麼 有沒有Platform Trust Technology 支援Platform Trust Technology嗎 Platform Trust Technology多少 安全晶片規格為何 安全晶片是什麼 有沒有安全晶片 支援安全晶片嗎 安全晶片多少 BZH、BYH、BXH 的 安全裝置 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\nTPM為 Firmware-based TPM，支援為 Intel Platform Trust Technology、Intel PTT\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Battery",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Battery",
+    "zh_name": "電池",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的電池：類型為 Li-ion，容量為 99Wh。",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的電池：類型為 Li-ion，容量為 99Wh。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nBattery\n電池\n電池 battery 電池容量 Wh 鋰電池 Li-ion\n電池規格為何 電池是什麼 有沒有電池 支援電池嗎 電池多少 Battery規格為何 Battery是什麼 有沒有Battery 支援Battery嗎 Battery多少 電池規格為何 電池是什麼 有沒有電池 支援電池嗎 電池多少 battery規格為何 battery是什麼 有沒有battery 支援battery嗎 battery多少 電池容量規格為何 電池容量是什麼 有沒有電池容量 支援電池容量嗎 電池容量多少 Wh規格為何 Wh是什麼 有沒有Wh 支援Wh嗎 Wh多少 鋰電池規格為何 鋰電池是什麼 有沒有鋰電池 支援鋰電池嗎 鋰電池多少 Li-ion規格為何 Li-ion是什麼 有沒有Li-ion 支援Li-ion嗎 Li-ion多少 BZH、BYH、BXH 的 電池 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n類型為 Li-ion，容量為 99Wh\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Adapter",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Adapter",
+    "zh_name": "變壓器",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的變壓器：功耗為 330W，類型為 AC Adapter。",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的變壓器：功耗為 330W，類型為 AC Adapter。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nAdapter\n變壓器\n變壓器 電源變壓器 adapter AC Adapter 電源供應器 充電器 功率 瓦數 W\n變壓器規格為何 變壓器是什麼 有沒有變壓器 支援變壓器嗎 變壓器多少 Adapter規格為何 Adapter是什麼 有沒有Adapter 支援Adapter嗎 Adapter多少 變壓器規格為何 變壓器是什麼 有沒有變壓器 支援變壓器嗎 變壓器多少 電源變壓器規格為何 電源變壓器是什麼 有沒有電源變壓器 支援電源變壓器嗎 電源變壓器多少 adapter規格為何 adapter是什麼 有沒有adapter 支援adapter嗎 adapter多少 AC Adapter規格為何 AC Adapter是什麼 有沒有AC Adapter 支援AC Adapter嗎 AC Adapter多少 電源供應器規格為何 電源供應器是什麼 有沒有電源供應器 支援電源供應器嗎 電源供應器多少 充電器規格為何 充電器是什麼 有沒有充電器 支援充電器嗎 充電器多少 功率規格為何 功率是什麼 有沒有功率 支援功率嗎 功率多少 瓦數規格為何 瓦數是什麼 有沒有瓦數 支援瓦數嗎 瓦數多少 W規格為何 W是什麼 有沒有W 支援W嗎 W多少 BZH、BYH、BXH 的 變壓器 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n功耗為 330W，類型為 AC Adapter\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "shared:Physical",
+    "type": "shared",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Physical",
+    "zh_name": "外觀與尺寸",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的外觀與尺寸：尺寸為 357 mm x 254 mm x 23~29.9 mm，重量約 2.5 kg，顏色為 Dark Tide。\n備註：Dimensions may vary depending on configuration, manufacturing process, and measurement method、Weight may vary depending on configuration, manufacturing process, and measurement method",
+    "text": "AORUS MASTER 16 AM6H BZH、BYH、BXH 的外觀與尺寸：尺寸為 357 mm x 254 mm x 23~29.9 mm，重量約 2.5 kg，顏色為 Dark Tide。\n備註：Dimensions may vary depending on configuration, manufacturing process, and measurement method、Weight may vary depending on configuration, manufacturing process, and measurement method",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nPhysical\n外觀與尺寸\n實體 外觀 機身 尺寸 長寬高 寬度 深度 高度 重量 顏色\n外觀與尺寸規格為何 外觀與尺寸是什麼 有沒有外觀與尺寸 支援外觀與尺寸嗎 外觀與尺寸多少 Physical規格為何 Physical是什麼 有沒有Physical 支援Physical嗎 Physical多少 實體規格為何 實體是什麼 有沒有實體 支援實體嗎 實體多少 外觀規格為何 外觀是什麼 有沒有外觀 支援外觀嗎 外觀多少 機身規格為何 機身是什麼 有沒有機身 支援機身嗎 機身多少 尺寸規格為何 尺寸是什麼 有沒有尺寸 支援尺寸嗎 尺寸多少 長寬高規格為何 長寬高是什麼 有沒有長寬高 支援長寬高嗎 長寬高多少 寬度規格為何 寬度是什麼 有沒有寬度 支援寬度嗎 寬度多少 深度規格為何 深度是什麼 有沒有深度 支援深度嗎 深度多少 高度規格為何 高度是什麼 有沒有高度 支援高度嗎 高度多少 重量規格為何 重量是什麼 有沒有重量 支援重量嗎 重量多少 顏色規格為何 顏色是什麼 有沒有顏色 支援顏色嗎 顏色多少 BZH、BYH、BXH 的 外觀與尺寸 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n尺寸為 寬為 357 mm，深為 254 mm，高為 23~29.9 mm，重量為 2.5 kg 約，顏色為 Dark Tide\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:OS",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "OS",
+    "zh_name": "作業系統",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（作業系統）：BZH、BYH、BXH 的作業系統沒有不同，皆為 選項為 Windows 11 Pro、Windows 11 Home、UEFI Shell OS，備註為 GIGABYTE recommends Windows 11 Pro for business.。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（作業系統）：BZH、BYH、BXH 的作業系統沒有不同，皆為 選項為 Windows 11 Pro、Windows 11 Home、UEFI Shell OS，備註為 GIGABYTE recommends Windows 11 Pro for business.。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nOS\n作業系統\n作業系統 系統 OS 作業環境 operating system Windows Windows 11 Win11 系統版本 出廠系統 內建系統\n作業系統規格為何 作業系統是什麼 有沒有作業系統 支援作業系統嗎 作業系統多少 OS規格為何 OS是什麼 有沒有OS 支援OS嗎 OS多少 作業系統規格為何 作業系統是什麼 有沒有作業系統 支援作業系統嗎 作業系統多少 系統規格為何 系統是什麼 有沒有系統 支援系統嗎 系統多少 OS規格為何 OS是什麼 有沒有OS 支援OS嗎 OS多少 作業環境規格為何 作業環境是什麼 有沒有作業環境 支援作業環境嗎 作業環境多少 operating system規格為何 operating system是什麼 有沒有operating system 支援operating system嗎 operating system多少 Windows規格為何 Windows是什麼 有沒有Windows 支援Windows嗎 Windows多少 Windows 11規格為何 Windows 11是什麼 有沒有Windows 11 支援Windows 11嗎 Windows 11多少 Win11規格為何 Win11是什麼 有沒有Win11 支援Win11嗎 Win11多少 系統版本規格為何 系統版本是什麼 有沒有系統版本 支援系統版本嗎 系統版本多少 出廠系統規格為何 出廠系統是什麼 有沒有出廠系統 支援出廠系統嗎 出廠系統多少 內建系統規格為何 內建系統是什麼 有沒有內建系統 支援內建系統嗎 內建系統多少 BZH、BYH、BXH 的 作業系統 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n選項為 Windows 11 Pro、Windows 11 Home、UEFI Shell OS，備註為 GIGABYTE recommends Windows 11 Pro for business.\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 作業系統 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:CPU",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "CPU",
+    "zh_name": "中央處理器",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（中央處理器）：BZH、BYH、BXH 的中央處理器沒有不同，皆為 處理器為 Intel Core Ultra 9 Processor 275HX，24 核心，24 執行緒，最高 5.4 GHz，36MB 快取。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（中央處理器）：BZH、BYH、BXH 的中央處理器沒有不同，皆為 處理器為 Intel Core Ultra 9 Processor 275HX，24 核心，24 執行緒，最高 5.4 GHz，36MB 快取。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nCPU\n中央處理器\n中央處理器 處理器 CPU processor Intel Core Ultra 核心 執行緒 時脈 快取\n中央處理器規格為何 中央處理器是什麼 有沒有中央處理器 支援中央處理器嗎 中央處理器多少 CPU規格為何 CPU是什麼 有沒有CPU 支援CPU嗎 CPU多少 中央處理器規格為何 中央處理器是什麼 有沒有中央處理器 支援中央處理器嗎 中央處理器多少 處理器規格為何 處理器是什麼 有沒有處理器 支援處理器嗎 處理器多少 CPU規格為何 CPU是什麼 有沒有CPU 支援CPU嗎 CPU多少 processor規格為何 processor是什麼 有沒有processor 支援processor嗎 processor多少 Intel規格為何 Intel是什麼 有沒有Intel 支援Intel嗎 Intel多少 Core Ultra規格為何 Core Ultra是什麼 有沒有Core Ultra 支援Core Ultra嗎 Core Ultra多少 核心規格為何 核心是什麼 有沒有核心 支援核心嗎 核心多少 執行緒規格為何 執行緒是什麼 有沒有執行緒 支援執行緒嗎 執行緒多少 時脈規格為何 時脈是什麼 有沒有時脈 支援時脈嗎 時脈多少 快取規格為何 快取是什麼 有沒有快取 支援快取嗎 快取多少 BZH、BYH、BXH 的 中央處理器 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n型號為 Intel Core Ultra 9 Processor 275HX，快取為 36MB，時脈為 up to 5.4 GHz，核心為 24，執行緒為 24\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 中央處理器 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison:GPU",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "GPU",
+    "zh_name": "顯示晶片",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（顯示晶片）：BZH、BYH、BXH 的顯示晶片有差異：BZH：顯示晶片為 NVIDIA GeForce RTX 5090 Laptop GPU，24GB GDDR7，175W，AI Boost 1797 MHz，Boost Clock 1597 MHz。 BYH：顯示晶片為 NVIDIA GeForce RTX 5080 Laptop GPU，16GB GDDR7，175W，AI Boost 1902 MHz，Boost Clock 1702 MHz。 BXH：顯示晶片為 NVIDIA GeForce RTX 5070 Ti Laptop GPU，12GB GDDR7，140W，AI Boost 1962 MHz，Boost Clock 1762 MHz。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（顯示晶片）：BZH、BYH、BXH 的顯示晶片有差異：BZH：顯示晶片為 NVIDIA GeForce RTX 5090 Laptop GPU，24GB GDDR7，175W，AI Boost 1797 MHz，Boost Clock 1597 MHz。 BYH：顯示晶片為 NVIDIA GeForce RTX 5080 Laptop GPU，16GB GDDR7，175W，AI Boost 1902 MHz，Boost Clock 1702 MHz。 BXH：顯示晶片為 NVIDIA GeForce RTX 5070 Ti Laptop GPU，12GB GDDR7，140W，AI Boost 1962 MHz，Boost Clock 1762 MHz。",
+    "search_text": "AORUS MASTER 16 AM6H\nGPU\n顯示晶片\n比較 差異 不同 一樣 共同 版本\nBZH BYH BXH\nAORUS MASTER 16 AM6H\nBZH\nGPU\n顯示晶片\n顯示晶片 顯示卡 顯卡 GPU graphics graphics card NVIDIA RTX AI Boost 顯存 VRAM 功耗\n顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 顯示卡規格為何 顯示卡是什麼 有沒有顯示卡 支援顯示卡嗎 顯示卡多少 顯卡規格為何 顯卡是什麼 有沒有顯卡 支援顯卡嗎 顯卡多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 graphics規格為何 graphics是什麼 有沒有graphics 支援graphics嗎 graphics多少 graphics card規格為何 graphics card是什麼 有沒有graphics card 支援graphics card嗎 graphics card多少 NVIDIA規格為何 NVIDIA是什麼 有沒有NVIDIA 支援NVIDIA嗎 NVIDIA多少 RTX規格為何 RTX是什麼 有沒有RTX 支援RTX嗎 RTX多少 AI Boost規格為何 AI Boost是什麼 有沒有AI Boost 支援AI Boost嗎 AI Boost多少 顯存規格為何 顯存是什麼 有沒有顯存 支援顯存嗎 顯存多少 VRAM規格為何 VRAM是什麼 有沒有VRAM 支援VRAM嗎 VRAM多少 功耗規格為何 功耗是什麼 有沒有功耗 支援功耗嗎 功耗多少 BZH 的 顯示晶片 有不同嗎 BZH 有什麼差異 BZH 差在哪 比較 BZH\n型號為 NVIDIA GeForce RTX 5090 Laptop GPU，記憶體為 24GB GDDR7，功耗為 175W，時脈為 AI Boost為 1797 MHz，Boost Clock為 1597 MHz，OC為 +200 MHz\n比較 差異 不同 一樣 共同 版本\nAORUS MASTER 16 AM6H\nBYH\nGPU\n顯示晶片\n顯示晶片 顯示卡 顯卡 GPU graphics graphics card NVIDIA RTX AI Boost 顯存 VRAM 功耗\n顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 顯示卡規格為何 顯示卡是什麼 有沒有顯示卡 支援顯示卡嗎 顯示卡多少 顯卡規格為何 顯卡是什麼 有沒有顯卡 支援顯卡嗎 顯卡多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 graphics規格為何 graphics是什麼 有沒有graphics 支援graphics嗎 graphics多少 graphics card規格為何 graphics card是什麼 有沒有graphics card 支援graphics card嗎 graphics card多少 NVIDIA規格為何 NVIDIA是什麼 有沒有NVIDIA 支援NVIDIA嗎 NVIDIA多少 RTX規格為何 RTX是什麼 有沒有RTX 支援RTX嗎 RTX多少 AI Boost規格為何 AI Boost是什麼 有沒有AI Boost 支援AI Boost嗎 AI Boost多少 顯存規格為何 顯存是什麼 有沒有顯存 支援顯存嗎 顯存多少 VRAM規格為何 VRAM是什麼 有沒有VRAM 支援VRAM嗎 VRAM多少 功耗規格為何 功耗是什麼 有沒有功耗 支援功耗嗎 功耗多少 BYH 的 顯示晶片 有不同嗎 BYH 有什麼差異 BYH 差在哪 比較 BYH\n型號為 NVIDIA GeForce RTX 5080 Laptop GPU，記憶體為 16GB GDDR7，功耗為 175W，時脈為 AI Boost為 1902 MHz，Boost Clock為 1702 MHz，OC為 +200 MHz\n比較 差異 不同 一樣 共同 版本\nAORUS MASTER 16 AM6H\nBXH\nGPU\n顯示晶片\n顯示晶片 顯示卡 顯卡 GPU graphics graphics card NVIDIA RTX AI Boost 顯存 VRAM 功耗\n顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 顯示晶片規格為何 顯示晶片是什麼 有沒有顯示晶片 支援顯示晶片嗎 顯示晶片多少 顯示卡規格為何 顯示卡是什麼 有沒有顯示卡 支援顯示卡嗎 顯示卡多少 顯卡規格為何 顯卡是什麼 有沒有顯卡 支援顯卡嗎 顯卡多少 GPU規格為何 GPU是什麼 有沒有GPU 支援GPU嗎 GPU多少 graphics規格為何 graphics是什麼 有沒有graphics 支援graphics嗎 graphics多少 graphics card規格為何 graphics card是什麼 有沒有graphics card 支援graphics card嗎 graphics card多少 NVIDIA規格為何 NVIDIA是什麼 有沒有NVIDIA 支援NVIDIA嗎 NVIDIA多少 RTX規格為何 RTX是什麼 有沒有RTX 支援RTX嗎 RTX多少 AI Boost規格為何 AI Boost是什麼 有沒有AI Boost 支援AI Boost嗎 AI Boost多少 顯存規格為何 顯存是什麼 有沒有顯存 支援顯存嗎 顯存多少 VRAM規格為何 VRAM是什麼 有沒有VRAM 支援VRAM嗎 VRAM多少 功耗規格為何 功耗是什麼 有沒有功耗 支援功耗嗎 功耗多少 BXH 的 顯示晶片 有不同嗎 BXH 有什麼差異 BXH 差在哪 比較 BXH\n型號為 NVIDIA GeForce RTX 5070 Ti Laptop GPU，記憶體為 12GB GDDR7，功耗為 140W，時脈為 AI Boost為 1962 MHz，Boost Clock為 1762 MHz，OC為 +200 MHz\n比較 差異 不同 一樣 共同 版本",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Display",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Display",
+    "zh_name": "顯示器",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（顯示器）：BZH、BYH、BXH 的顯示器沒有不同，皆為 螢幕規格為 16 inch，WQXGA，2560x1600，OLED，240Hz，1ms，DCI-P3 100%，500 nits (peak)。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（顯示器）：BZH、BYH、BXH 的顯示器沒有不同，皆為 螢幕規格為 16 inch，WQXGA，2560x1600，OLED，240Hz，1ms，DCI-P3 100%，500 nits (peak)。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nDisplay\n顯示器\n顯示器 螢幕 顯示效果 display OLED 解析度 更新率 亮度 色域 HDR Dolby Vision\n顯示器規格為何 顯示器是什麼 有沒有顯示器 支援顯示器嗎 顯示器多少 Display規格為何 Display是什麼 有沒有Display 支援Display嗎 Display多少 顯示器規格為何 顯示器是什麼 有沒有顯示器 支援顯示器嗎 顯示器多少 螢幕規格為何 螢幕是什麼 有沒有螢幕 支援螢幕嗎 螢幕多少 顯示效果規格為何 顯示效果是什麼 有沒有顯示效果 支援顯示效果嗎 顯示效果多少 display規格為何 display是什麼 有沒有display 支援display嗎 display多少 OLED規格為何 OLED是什麼 有沒有OLED 支援OLED嗎 OLED多少 解析度規格為何 解析度是什麼 有沒有解析度 支援解析度嗎 解析度多少 更新率規格為何 更新率是什麼 有沒有更新率 支援更新率嗎 更新率多少 亮度規格為何 亮度是什麼 有沒有亮度 支援亮度嗎 亮度多少 色域規格為何 色域是什麼 有沒有色域 支援色域嗎 色域多少 HDR規格為何 HDR是什麼 有沒有HDR 支援HDR嗎 HDR多少 Dolby Vision規格為何 Dolby Vision是什麼 有沒有Dolby Vision 支援Dolby Vision嗎 Dolby Vision多少 BZH、BYH、BXH 的 顯示器 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n尺寸為 16 inch，比例為 16:10，面板為 OLED，解析度等級為 WQXGA，解析度為 2560x1600，更新率為 240Hz，反應時間為 1ms，色域為 DCI-P3 100%，亮度為 500 nits (peak)，對比為 1000000:1\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 顯示器 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Memory",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Memory",
+    "zh_name": "記憶體",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（記憶體）：BZH、BYH、BXH 的記憶體沒有不同，皆為 記憶體為 DDR5 5600MHz，2x SO-DIMM，最高支援 Up to 64GB。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（記憶體）：BZH、BYH、BXH 的記憶體沒有不同，皆為 記憶體為 DDR5 5600MHz，2x SO-DIMM，最高支援 Up to 64GB。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nMemory\n記憶體\n記憶體 RAM memory DDR5 容量 最大容量 插槽 SO-DIMM 頻率\n記憶體規格為何 記憶體是什麼 有沒有記憶體 支援記憶體嗎 記憶體多少 Memory規格為何 Memory是什麼 有沒有Memory 支援Memory嗎 Memory多少 記憶體規格為何 記憶體是什麼 有沒有記憶體 支援記憶體嗎 記憶體多少 RAM規格為何 RAM是什麼 有沒有RAM 支援RAM嗎 RAM多少 memory規格為何 memory是什麼 有沒有memory 支援memory嗎 memory多少 DDR5規格為何 DDR5是什麼 有沒有DDR5 支援DDR5嗎 DDR5多少 容量規格為何 容量是什麼 有沒有容量 支援容量嗎 容量多少 最大容量規格為何 最大容量是什麼 有沒有最大容量 支援最大容量嗎 最大容量多少 插槽規格為何 插槽是什麼 有沒有插槽 支援插槽嗎 插槽多少 SO-DIMM規格為何 SO-DIMM是什麼 有沒有SO-DIMM 支援SO-DIMM嗎 SO-DIMM多少 頻率規格為何 頻率是什麼 有沒有頻率 支援頻率嗎 頻率多少 BZH、BYH、BXH 的 記憶體 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n最大容量為 Up to 64GB，類型為 DDR5，速度為 5600MHz，插槽為 2x SO-DIMM\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 記憶體 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Storage",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Storage",
+    "zh_name": "儲存裝置",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（儲存裝置）：BZH、BYH、BXH 的儲存裝置沒有不同，皆為 儲存裝置為 PCIe NVMe M.2 SSD，最高 4TB，插槽包含 1x PCIe Gen5 M.2、1x PCIe Gen4 x4 M.2。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（儲存裝置）：BZH、BYH、BXH 的儲存裝置沒有不同，皆為 儲存裝置為 PCIe NVMe M.2 SSD，最高 4TB，插槽包含 1x PCIe Gen5 M.2、1x PCIe Gen4 x4 M.2。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nStorage\n儲存裝置\n儲存裝置 儲存 硬碟 SSD storage NVMe M.2 PCIe 容量 最大容量\n儲存裝置規格為何 儲存裝置是什麼 有沒有儲存裝置 支援儲存裝置嗎 儲存裝置多少 Storage規格為何 Storage是什麼 有沒有Storage 支援Storage嗎 Storage多少 儲存裝置規格為何 儲存裝置是什麼 有沒有儲存裝置 支援儲存裝置嗎 儲存裝置多少 儲存規格為何 儲存是什麼 有沒有儲存 支援儲存嗎 儲存多少 硬碟規格為何 硬碟是什麼 有沒有硬碟 支援硬碟嗎 硬碟多少 SSD規格為何 SSD是什麼 有沒有SSD 支援SSD嗎 SSD多少 storage規格為何 storage是什麼 有沒有storage 支援storage嗎 storage多少 NVMe規格為何 NVMe是什麼 有沒有NVMe 支援NVMe嗎 NVMe多少 M.2規格為何 M.2是什麼 有沒有M.2 支援M.2嗎 M.2多少 PCIe規格為何 PCIe是什麼 有沒有PCIe 支援PCIe嗎 PCIe多少 容量規格為何 容量是什麼 有沒有容量 支援容量嗎 容量多少 最大容量規格為何 最大容量是什麼 有沒有最大容量 支援最大容量嗎 最大容量多少 BZH、BYH、BXH 的 儲存裝置 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n插槽為 1x PCIe Gen5 M.2、1x PCIe Gen4 x4 M.2，最大容量為 4TB，類型為 PCIe NVMe M.2 SSD\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 儲存裝置 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Keyboard",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Keyboard",
+    "zh_name": "鍵盤種類",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（鍵盤種類）：BZH、BYH、BXH 的鍵盤種類沒有不同，皆為 類型為 Backlit Keyboard，背光為 類型為 RGB，分區為 3-zone，鍵程為 up to 1.7 mm。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（鍵盤種類）：BZH、BYH、BXH 的鍵盤種類沒有不同，皆為 類型為 Backlit Keyboard，背光為 類型為 RGB，分區為 3-zone，鍵程為 up to 1.7 mm。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nKeyboard\n鍵盤種類\n鍵盤 鍵盤種類 keyboard 背光鍵盤 RGB 三區 RGB 鍵程 N-Key\n鍵盤種類規格為何 鍵盤種類是什麼 有沒有鍵盤種類 支援鍵盤種類嗎 鍵盤種類多少 Keyboard規格為何 Keyboard是什麼 有沒有Keyboard 支援Keyboard嗎 Keyboard多少 鍵盤規格為何 鍵盤是什麼 有沒有鍵盤 支援鍵盤嗎 鍵盤多少 鍵盤種類規格為何 鍵盤種類是什麼 有沒有鍵盤種類 支援鍵盤種類嗎 鍵盤種類多少 keyboard規格為何 keyboard是什麼 有沒有keyboard 支援keyboard嗎 keyboard多少 背光鍵盤規格為何 背光鍵盤是什麼 有沒有背光鍵盤 支援背光鍵盤嗎 背光鍵盤多少 RGB規格為何 RGB是什麼 有沒有RGB 支援RGB嗎 RGB多少 三區 RGB規格為何 三區 RGB是什麼 有沒有三區 RGB 支援三區 RGB嗎 三區 RGB多少 鍵程規格為何 鍵程是什麼 有沒有鍵程 支援鍵程嗎 鍵程多少 N-Key規格為何 N-Key是什麼 有沒有N-Key 支援N-Key嗎 N-Key多少 BZH、BYH、BXH 的 鍵盤種類 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n類型為 Backlit Keyboard，背光為 類型為 RGB，分區為 3-zone，鍵程為 up to 1.7 mm\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 鍵盤種類 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Ports",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Ports",
+    "zh_name": "連接埠",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（連接埠）：BZH、BYH、BXH 的連接埠沒有不同，皆為 連接埠左側包含 1 個 DC in；1 個 RJ-45；1 個 HDMI 2.1；1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 5），支援 USB4、DisplayPort 2.1、Power Delivery 3.0；右側包含 1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 4），支援 USB4、DisplayPort 1.4、Power Delivery 3.0；1 個 MicroSD（UHS-II）；1 個 Audio Jack，支援 microphone、headphone combo。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（連接埠）：BZH、BYH、BXH 的連接埠沒有不同，皆為 連接埠左側包含 1 個 DC in；1 個 RJ-45；1 個 HDMI 2.1；1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 5），支援 USB4、DisplayPort 2.1、Power Delivery 3.0；右側包含 1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 4），支援 USB4、DisplayPort 1.4、Power Delivery 3.0；1 個 MicroSD（UHS-II）；1 個 Audio Jack，支援 microphone、headphone combo。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nPorts\n連接埠\n連接埠 接口 I/O ports USB USB Type-A USB Type-C Thunderbolt HDMI RJ-45 MicroSD Audio Jack\n連接埠規格為何 連接埠是什麼 有沒有連接埠 支援連接埠嗎 連接埠多少 Ports規格為何 Ports是什麼 有沒有Ports 支援Ports嗎 Ports多少 連接埠規格為何 連接埠是什麼 有沒有連接埠 支援連接埠嗎 連接埠多少 接口規格為何 接口是什麼 有沒有接口 支援接口嗎 接口多少 I/O規格為何 I/O是什麼 有沒有I/O 支援I/O嗎 I/O多少 ports規格為何 ports是什麼 有沒有ports 支援ports嗎 ports多少 USB規格為何 USB是什麼 有沒有USB 支援USB嗎 USB多少 USB Type-A規格為何 USB Type-A是什麼 有沒有USB Type-A 支援USB Type-A嗎 USB Type-A多少 USB Type-C規格為何 USB Type-C是什麼 有沒有USB Type-C 支援USB Type-C嗎 USB Type-C多少 Thunderbolt規格為何 Thunderbolt是什麼 有沒有Thunderbolt 支援Thunderbolt嗎 Thunderbolt多少 HDMI規格為何 HDMI是什麼 有沒有HDMI 支援HDMI嗎 HDMI多少 RJ-45規格為何 RJ-45是什麼 有沒有RJ-45 支援RJ-45嗎 RJ-45多少 MicroSD規格為何 MicroSD是什麼 有沒有MicroSD 支援MicroSD嗎 MicroSD多少 Audio Jack規格為何 Audio Jack是什麼 有沒有Audio Jack 支援Audio Jack嗎 Audio Jack多少 BZH、BYH、BXH 的 連接埠 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n左側包含 1 個 DC in；1 個 RJ-45；1 個 HDMI 2.1；1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 5），支援 USB4、DisplayPort 2.1、Power Delivery 3.0，右側包含 1 個 USB Type-A（USB 3.2 Gen2）；1 個 USB Type-C（Thunderbolt 4），支援 USB4、DisplayPort 1.4、Power Delivery 3.0；1 個 MicroSD（UHS-II）；1 個 Audio Jack，支援 microphone、headphone combo\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 連接埠 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Audio",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Audio",
+    "zh_name": "音效",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（音效）：BZH、BYH、BXH 的音效沒有不同，皆為 喇叭為 數量為 4，單顆功率為 2W，麥克風為 有。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（音效）：BZH、BYH、BXH 的音效沒有不同，皆為 喇叭為 數量為 4，單顆功率為 2W，麥克風為 有。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nAudio\n音效\n音效 audio 喇叭 揚聲器 speaker Dolby Atmos 杜比全景聲 Smart Amp 麥克風 收音麥克風 microphone\n音效規格為何 音效是什麼 有沒有音效 支援音效嗎 音效多少 Audio規格為何 Audio是什麼 有沒有Audio 支援Audio嗎 Audio多少 音效規格為何 音效是什麼 有沒有音效 支援音效嗎 音效多少 audio規格為何 audio是什麼 有沒有audio 支援audio嗎 audio多少 喇叭規格為何 喇叭是什麼 有沒有喇叭 支援喇叭嗎 喇叭多少 揚聲器規格為何 揚聲器是什麼 有沒有揚聲器 支援揚聲器嗎 揚聲器多少 speaker規格為何 speaker是什麼 有沒有speaker 支援speaker嗎 speaker多少 Dolby Atmos規格為何 Dolby Atmos是什麼 有沒有Dolby Atmos 支援Dolby Atmos嗎 Dolby Atmos多少 杜比全景聲規格為何 杜比全景聲是什麼 有沒有杜比全景聲 支援杜比全景聲嗎 杜比全景聲多少 Smart Amp規格為何 Smart Amp是什麼 有沒有Smart Amp 支援Smart Amp嗎 Smart Amp多少 麥克風規格為何 麥克風是什麼 有沒有麥克風 支援麥克風嗎 麥克風多少 收音麥克風規格為何 收音麥克風是什麼 有沒有收音麥克風 支援收音麥克風嗎 收音麥克風多少 microphone規格為何 microphone是什麼 有沒有microphone 支援microphone嗎 microphone多少 BZH、BYH、BXH 的 音效 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n喇叭為 數量為 4，單顆功率為 2W，麥克風為 有\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 音效 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Connectivity",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Connectivity",
+    "zh_name": "通訊",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（通訊）：BZH、BYH、BXH 的通訊沒有不同，皆為 Wi-Fi為 規格為 Wi-Fi 7，協定為 802.11be，天線為 2x2，有線網路為 1G，藍牙為 v5.4。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（通訊）：BZH、BYH、BXH 的通訊沒有不同，皆為 Wi-Fi為 規格為 Wi-Fi 7，協定為 802.11be，天線為 2x2，有線網路為 1G，藍牙為 v5.4。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nConnectivity\n通訊\n通訊 連線 connectivity 網路 Wi-Fi WiFi wifi 無線網路 LAN 乙太網路 Bluetooth 藍牙\n通訊規格為何 通訊是什麼 有沒有通訊 支援通訊嗎 通訊多少 Connectivity規格為何 Connectivity是什麼 有沒有Connectivity 支援Connectivity嗎 Connectivity多少 通訊規格為何 通訊是什麼 有沒有通訊 支援通訊嗎 通訊多少 連線規格為何 連線是什麼 有沒有連線 支援連線嗎 連線多少 connectivity規格為何 connectivity是什麼 有沒有connectivity 支援connectivity嗎 connectivity多少 網路規格為何 網路是什麼 有沒有網路 支援網路嗎 網路多少 Wi-Fi規格為何 Wi-Fi是什麼 有沒有Wi-Fi 支援Wi-Fi嗎 Wi-Fi多少 WiFi規格為何 WiFi是什麼 有沒有WiFi 支援WiFi嗎 WiFi多少 wifi規格為何 wifi是什麼 有沒有wifi 支援wifi嗎 wifi多少 無線網路規格為何 無線網路是什麼 有沒有無線網路 支援無線網路嗎 無線網路多少 LAN規格為何 LAN是什麼 有沒有LAN 支援LAN嗎 LAN多少 乙太網路規格為何 乙太網路是什麼 有沒有乙太網路 支援乙太網路嗎 乙太網路多少 Bluetooth規格為何 Bluetooth是什麼 有沒有Bluetooth 支援Bluetooth嗎 Bluetooth多少 藍牙規格為何 藍牙是什麼 有沒有藍牙 支援藍牙嗎 藍牙多少 BZH、BYH、BXH 的 通訊 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\nWi-Fi為 規格為 Wi-Fi 7，協定為 802.11be，天線為 2x2，有線網路為 1G，藍牙為 v5.4\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 通訊 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Webcam",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Webcam",
+    "zh_name": "視訊鏡頭",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（視訊鏡頭）：BZH、BYH、BXH 的視訊鏡頭沒有不同，皆為 鏡頭為 FHD 1080p IR Webcam，麥克風為 Built-in array microphone。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（視訊鏡頭）：BZH、BYH、BXH 的視訊鏡頭沒有不同，皆為 鏡頭為 FHD 1080p IR Webcam，麥克風為 Built-in array microphone。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nWebcam\n視訊鏡頭\n視訊鏡頭 鏡頭 視訊 webcam camera 攝影機 IR Webcam FHD Windows Hello 臉部辨識 陣列麥克風\n視訊鏡頭規格為何 視訊鏡頭是什麼 有沒有視訊鏡頭 支援視訊鏡頭嗎 視訊鏡頭多少 Webcam規格為何 Webcam是什麼 有沒有Webcam 支援Webcam嗎 Webcam多少 視訊鏡頭規格為何 視訊鏡頭是什麼 有沒有視訊鏡頭 支援視訊鏡頭嗎 視訊鏡頭多少 鏡頭規格為何 鏡頭是什麼 有沒有鏡頭 支援鏡頭嗎 鏡頭多少 視訊規格為何 視訊是什麼 有沒有視訊 支援視訊嗎 視訊多少 webcam規格為何 webcam是什麼 有沒有webcam 支援webcam嗎 webcam多少 camera規格為何 camera是什麼 有沒有camera 支援camera嗎 camera多少 攝影機規格為何 攝影機是什麼 有沒有攝影機 支援攝影機嗎 攝影機多少 IR Webcam規格為何 IR Webcam是什麼 有沒有IR Webcam 支援IR Webcam嗎 IR Webcam多少 FHD規格為何 FHD是什麼 有沒有FHD 支援FHD嗎 FHD多少 Windows Hello規格為何 Windows Hello是什麼 有沒有Windows Hello 支援Windows Hello嗎 Windows Hello多少 臉部辨識規格為何 臉部辨識是什麼 有沒有臉部辨識 支援臉部辨識嗎 臉部辨識多少 陣列麥克風規格為何 陣列麥克風是什麼 有沒有陣列麥克風 支援陣列麥克風嗎 陣列麥克風多少 BZH、BYH、BXH 的 視訊鏡頭 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n鏡頭為 FHD 1080p IR Webcam，麥克風為 Built-in array microphone\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 視訊鏡頭 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Security",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Security",
+    "zh_name": "安全裝置",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（安全裝置）：BZH、BYH、BXH 的安全裝置沒有不同，皆為 TPM為 Firmware-based TPM，支援為 Intel Platform Trust Technology、Intel PTT。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（安全裝置）：BZH、BYH、BXH 的安全裝置沒有不同，皆為 TPM為 Firmware-based TPM，支援為 Intel Platform Trust Technology、Intel PTT。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nSecurity\n安全裝置\n安全裝置 安全 security TPM Firmware TPM Intel PTT Platform Trust Technology 安全晶片\n安全裝置規格為何 安全裝置是什麼 有沒有安全裝置 支援安全裝置嗎 安全裝置多少 Security規格為何 Security是什麼 有沒有Security 支援Security嗎 Security多少 安全裝置規格為何 安全裝置是什麼 有沒有安全裝置 支援安全裝置嗎 安全裝置多少 安全規格為何 安全是什麼 有沒有安全 支援安全嗎 安全多少 security規格為何 security是什麼 有沒有security 支援security嗎 security多少 TPM規格為何 TPM是什麼 有沒有TPM 支援TPM嗎 TPM多少 Firmware TPM規格為何 Firmware TPM是什麼 有沒有Firmware TPM 支援Firmware TPM嗎 Firmware TPM多少 Intel PTT規格為何 Intel PTT是什麼 有沒有Intel PTT 支援Intel PTT嗎 Intel PTT多少 Platform Trust Technology規格為何 Platform Trust Technology是什麼 有沒有Platform Trust Technology 支援Platform Trust Technology嗎 Platform Trust Technology多少 安全晶片規格為何 安全晶片是什麼 有沒有安全晶片 支援安全晶片嗎 安全晶片多少 BZH、BYH、BXH 的 安全裝置 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\nTPM為 Firmware-based TPM，支援為 Intel Platform Trust Technology、Intel PTT\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 安全裝置 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Battery",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Battery",
+    "zh_name": "電池",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（電池）：BZH、BYH、BXH 的電池沒有不同，皆為 類型為 Li-ion，容量為 99Wh。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（電池）：BZH、BYH、BXH 的電池沒有不同，皆為 類型為 Li-ion，容量為 99Wh。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nBattery\n電池\n電池 battery 電池容量 Wh 鋰電池 Li-ion\n電池規格為何 電池是什麼 有沒有電池 支援電池嗎 電池多少 Battery規格為何 Battery是什麼 有沒有Battery 支援Battery嗎 Battery多少 電池規格為何 電池是什麼 有沒有電池 支援電池嗎 電池多少 battery規格為何 battery是什麼 有沒有battery 支援battery嗎 battery多少 電池容量規格為何 電池容量是什麼 有沒有電池容量 支援電池容量嗎 電池容量多少 Wh規格為何 Wh是什麼 有沒有Wh 支援Wh嗎 Wh多少 鋰電池規格為何 鋰電池是什麼 有沒有鋰電池 支援鋰電池嗎 鋰電池多少 Li-ion規格為何 Li-ion是什麼 有沒有Li-ion 支援Li-ion嗎 Li-ion多少 BZH、BYH、BXH 的 電池 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n類型為 Li-ion，容量為 99Wh\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 電池 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Adapter",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Adapter",
+    "zh_name": "變壓器",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（變壓器）：BZH、BYH、BXH 的變壓器沒有不同，皆為 功耗為 330W，類型為 AC Adapter。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（變壓器）：BZH、BYH、BXH 的變壓器沒有不同，皆為 功耗為 330W，類型為 AC Adapter。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nAdapter\n變壓器\n變壓器 電源變壓器 adapter AC Adapter 電源供應器 充電器 功率 瓦數 W\n變壓器規格為何 變壓器是什麼 有沒有變壓器 支援變壓器嗎 變壓器多少 Adapter規格為何 Adapter是什麼 有沒有Adapter 支援Adapter嗎 Adapter多少 變壓器規格為何 變壓器是什麼 有沒有變壓器 支援變壓器嗎 變壓器多少 電源變壓器規格為何 電源變壓器是什麼 有沒有電源變壓器 支援電源變壓器嗎 電源變壓器多少 adapter規格為何 adapter是什麼 有沒有adapter 支援adapter嗎 adapter多少 AC Adapter規格為何 AC Adapter是什麼 有沒有AC Adapter 支援AC Adapter嗎 AC Adapter多少 電源供應器規格為何 電源供應器是什麼 有沒有電源供應器 支援電源供應器嗎 電源供應器多少 充電器規格為何 充電器是什麼 有沒有充電器 支援充電器嗎 充電器多少 功率規格為何 功率是什麼 有沒有功率 支援功率嗎 功率多少 瓦數規格為何 瓦數是什麼 有沒有瓦數 支援瓦數嗎 瓦數多少 W規格為何 W是什麼 有沒有W 支援W嗎 W多少 BZH、BYH、BXH 的 變壓器 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n功耗為 330W，類型為 AC Adapter\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 變壓器 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  },
+  {
+    "id": "comparison_shared:Physical",
+    "type": "comparison",
+    "family": "AORUS MASTER 16 AM6H",
+    "category": "Physical",
+    "zh_name": "外觀與尺寸",
+    "models": [
+      "BZH",
+      "BYH",
+      "BXH"
+    ],
+    "content": "AORUS MASTER 16 AM6H 版本比較（外觀與尺寸）：BZH、BYH、BXH 的外觀與尺寸沒有不同，皆為 尺寸為 357 mm x 254 mm x 23~29.9 mm，重量約 2.5 kg，顏色為 Dark Tide。",
+    "text": "AORUS MASTER 16 AM6H 版本比較（外觀與尺寸）：BZH、BYH、BXH 的外觀與尺寸沒有不同，皆為 尺寸為 357 mm x 254 mm x 23~29.9 mm，重量約 2.5 kg，顏色為 Dark Tide。",
+    "search_text": "AORUS MASTER 16 AM6H\nBZH BYH BXH\nPhysical\n外觀與尺寸\n實體 外觀 機身 尺寸 長寬高 寬度 深度 高度 重量 顏色\n外觀與尺寸規格為何 外觀與尺寸是什麼 有沒有外觀與尺寸 支援外觀與尺寸嗎 外觀與尺寸多少 Physical規格為何 Physical是什麼 有沒有Physical 支援Physical嗎 Physical多少 實體規格為何 實體是什麼 有沒有實體 支援實體嗎 實體多少 外觀規格為何 外觀是什麼 有沒有外觀 支援外觀嗎 外觀多少 機身規格為何 機身是什麼 有沒有機身 支援機身嗎 機身多少 尺寸規格為何 尺寸是什麼 有沒有尺寸 支援尺寸嗎 尺寸多少 長寬高規格為何 長寬高是什麼 有沒有長寬高 支援長寬高嗎 長寬高多少 寬度規格為何 寬度是什麼 有沒有寬度 支援寬度嗎 寬度多少 深度規格為何 深度是什麼 有沒有深度 支援深度嗎 深度多少 高度規格為何 高度是什麼 有沒有高度 支援高度嗎 高度多少 重量規格為何 重量是什麼 有沒有重量 支援重量嗎 重量多少 顏色規格為何 顏色是什麼 有沒有顏色 支援顏色嗎 顏色多少 BZH、BYH、BXH 的 外觀與尺寸 有不同嗎 BZH、BYH、BXH 有什麼差異 BZH、BYH、BXH 差在哪 比較 BZH、BYH、BXH\n尺寸為 寬為 357 mm，深為 254 mm，高為 23~29.9 mm，重量為 2.5 kg 約，顏色為 Dark Tide\n比較 差異 不同 一樣 共同 版本\nBZH、BYH、BXH 外觀與尺寸 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
+    "source": "product_info.json"
+  }
+]
