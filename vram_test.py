@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 DEFAULT_QUERY = "AORUS MASTER 16 AM6H 的重量和尺寸是多少?"
+DEFAULT_VRAM_LIMIT_MB = 4096
 
 
 @dataclass
@@ -101,7 +102,12 @@ def format_mb(value):
     return f"{value:,} MB"
 
 
-def print_report(monitor: VramMonitor, baseline_mb: int | None, csv_path: Path | None):
+def print_report(
+    monitor: VramMonitor,
+    baseline_mb: int | None,
+    csv_path: Path | None,
+    vram_limit_mb: int,
+):
     if not monitor.samples:
         print("No VRAM samples were collected. Is NVIDIA driver / nvidia-smi available?")
         return
@@ -119,6 +125,17 @@ def print_report(monitor: VramMonitor, baseline_mb: int | None, csv_path: Path |
     overall = monitor.peak()
     if overall is not None:
         print(f"Overall peak:        {format_mb(overall.used_mb)} / {format_mb(overall.total_mb)} at stage '{overall.stage}'")
+        measured_mb = overall.used_mb
+        measured_label = "overall peak"
+        if baseline_mb is not None:
+            measured_mb = max(0, overall.used_mb - baseline_mb)
+            measured_label = "peak increase from baseline"
+
+        status = "PASS" if measured_mb <= vram_limit_mb else "FAIL"
+        print(
+            f"{vram_limit_mb} MB check:       {status} "
+            f"({measured_label}: {format_mb(measured_mb)}, limit: {format_mb(vram_limit_mb)})"
+        )
 
     if csv_path is not None:
         print(f"CSV saved: {csv_path}")
@@ -128,63 +145,29 @@ def add_project_to_path(project_dir: Path):
     project_dir = project_dir.resolve()
     os.chdir(project_dir)
     sys.path.insert(0, str(project_dir))
+    return project_dir
 
 
-def get_chunk_text(chunk):
-    return chunk.get("content") or chunk.get("text") or chunk.get("search_text") or ""
-
-
-def build_simple_prompt(query, results):
-    context = "\n\n".join(
-        f"[資料 {index + 1}]\n{get_chunk_text(result['chunk'])}"
-        for index, result in enumerate(results)
-    )
-    return (
-        "你是 GIGABYTE AORUS MASTER 16 AM6H 筆電助手。"
-        "請只根據資料回答，若資料不足請說明。\n\n"
-        f"資料:\n{context}\n\n"
-        f"問題: {query}\n\n"
-        "回答:"
-    )
-
-
-def stream_llm(llm, prompt: str, max_tokens: int):
-    output = []
-    stream = llm(
-        prompt,
-        max_tokens=max_tokens,
-        temperature=0.0,
-        top_p=1.0,
-        stream=True,
-    )
-    for chunk in stream:
-        token = chunk["choices"][0]["text"]
-        if token:
-            print(token, end="", flush=True)
-            output.append(token)
-    print()
-    return "".join(output)
+def resolve_model_path(model_path: str | Path, project_dir: Path):
+    path = Path(model_path)
+    if not path.is_absolute():
+        path = project_dir / path
+    return path.resolve()
 
 
 def run_rag(args, monitor: VramMonitor):
-    add_project_to_path(args.project_dir)
+    project_dir = add_project_to_path(args.project_dir)
 
     from rag.embedding import load_embedding_model
+    from rag.generation import build_prompt, generate_stream, load_llm
     from rag.retrieval import load_index, retrieve
 
-    try:
-        from rag.generation import load_llm
-    except SyntaxError:
-        from llama_cpp import Llama
-
-        def load_llm(model_path, n_ctx=2048, n_gpu_layers=20, n_threads=4):
-            return Llama(
-                model_path=model_path,
-                n_ctx=n_ctx,
-                n_gpu_layers=n_gpu_layers,
-                n_threads=n_threads,
-                verbose=False,
-            )
+    model_path = resolve_model_path(args.model_path, project_dir)
+    if not model_path.exists():
+        raise FileNotFoundError(
+            f"Model file not found: {model_path}\n"
+            "Use --model-path or set MODEL_PATH to the GGUF file path."
+        )
 
     monitor.set_stage("load_index")
     embeddings, chunks = load_index(args.storage_dir)
@@ -194,7 +177,7 @@ def run_rag(args, monitor: VramMonitor):
 
     monitor.set_stage("load_llm")
     llm = load_llm(
-        model_path=args.model_path,
+        model_path=str(model_path),
         n_ctx=args.n_ctx,
         n_gpu_layers=args.n_gpu_layers,
         n_threads=args.n_threads,
@@ -209,11 +192,11 @@ def run_rag(args, monitor: VramMonitor):
         top_k=args.top_k,
     )
 
-    prompt = build_simple_prompt(args.query, results)
+    prompt = build_prompt(args.query, results)
 
     monitor.set_stage("generate")
     print("\n=== Model output ===")
-    stream_llm(llm, prompt, args.max_tokens)
+    generate_stream(llm, prompt, args.max_tokens)
 
     monitor.set_stage("finished")
 
@@ -233,6 +216,7 @@ def parse_args():
     parser.add_argument("--gpu-index", type=int, default=0)
     parser.add_argument("--sample-interval", type=float, default=0.2)
     parser.add_argument("--csv", type=Path, default=Path("vram_samples.csv"), help="Where to save VRAM samples.")
+    parser.add_argument("--vram-limit-mb", type=int, default=DEFAULT_VRAM_LIMIT_MB)
     return parser.parse_args()
 
 
@@ -252,7 +236,7 @@ def main():
         monitor.stop()
         if args.csv:
             save_csv(monitor.samples, args.csv)
-        print_report(monitor, baseline_mb, args.csv)
+        print_report(monitor, baseline_mb, args.csv, args.vram_limit_mb)
 
 
 if __name__ == "__main__":
