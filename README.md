@@ -9,16 +9,17 @@
 3. **執行 `uv sync`**  
    依 `pyproject.toml` 建立環境。
 
-4. **指定模型雲端路徑**  
-   量化後 GGUF 模型位置位於 model/ 中。
+4. **指定模型路徑**  
+   透過環境變數 MODEL_PATH 指定要載入的 GGUF 模型檔案路徑
+   量化後的qwen2.5-1.5b.q4_k_m.gguf模型：https://drive.google.com/file/d/1F4CNJoJ4SPFMIg8VZXk4bLuiI7vyhwUw/view?usp=sharing
 
-5. **執行 `main.py`**  
+6. **執行 `main.py`**  
    啟動多輪產品規格問答。
 
-6. **執行 `evaluation.py`**  
+7. **執行 `evaluation.py`**  
    測試 TTFT、TPS 與回答品質。
 
-7. **執行 `vram.py`**  
+8. **執行 `vram.py`**  
    量測模型推論 VRAM 使用量。
 
 ---
