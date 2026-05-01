@@ -4,8 +4,8 @@ from pathlib import Path
 
 import numpy as np
 
-from chunking import build_chunks, load_product_data
-from embedding import load_embedding_model
+from rag.chunking import build_chunks, load_product_data
+from rag.embedding import load_embedding_model
 
 
 PRODUCT_DATA_PATH = Path("data/product_info.json")
