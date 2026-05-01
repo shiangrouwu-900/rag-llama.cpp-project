@@ -1,33 +1,68 @@
 # main.py
 import os
-import json
-import numpy as np
 from pathlib import Path
 
-from rag.chunking import build_chunks
-from rag.embedding import load_embedding_model, build_embeddings
-from rag.retrieval import retrieve
+from rag.embedding import load_embedding_model
+from rag.retrieval import load_index, retrieve
 from rag.generation import load_llm, build_prompt, generate_stream
+from rag.build_index import main as build_index_main
 
 
-def save_artifacts(chunks, embeddings, output_dir="storage"):
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
+STORAGE_DIR = "storage"
+DEFAULT_MODEL_PATH = "models/qwen2.5-1.5b.q4_k_m.gguf"
+TOP_K = 3
 
-    with open(f"{output_dir}/chunks.json", "w", encoding="utf-8") as f:
-        json.dump(chunks, f, ensure_ascii=False, indent=2)
 
-    np.save(f"{output_dir}/embeddings.npy", embeddings)
+def index_files_exist(storage_dir=STORAGE_DIR):
+    storage_path = Path(storage_dir)
+    return (
+        (storage_path / "chunks.json").exists()
+        and (storage_path / "embeddings.npy").exists()
+    )
+
+
+def should_rebuild_index():
+    """
+    預設不重建 index。
+    如果需要強制重建，可在執行前設定：
+    REBUILD_INDEX=1 uv run python -m main
+    """
+    return os.getenv("REBUILD_INDEX", "0") == "1"
+
+
+def prepare_index(storage_dir=STORAGE_DIR):
+    if should_rebuild_index() or not index_files_exist(storage_dir):
+        print("找不到既有 index，或已設定 REBUILD_INDEX=1，開始建立 index...")
+        build_index_main()
+
+    print("載入 index...")
+    embeddings, chunks = load_index(storage_dir)
+    print(f"已載入 chunks: {len(chunks)}")
+
+    return embeddings, chunks
+
+
+def get_model_path():
+    model_path = os.getenv("MODEL_PATH", DEFAULT_MODEL_PATH)
+
+    if not Path(model_path).exists():
+        raise FileNotFoundError(
+            f"找不到模型檔案：{model_path}\n"
+            "請設定 MODEL_PATH，例如：\n"
+            'export MODEL_PATH="/content/drive/MyDrive/rag_models/qwen2.5-1.5b.q4_k_m.gguf"'
+        )
+
+    return model_path
 
 
 def main():
+    embeddings, chunks = prepare_index(STORAGE_DIR)
+
+    print("載入 embedding model...")
     embedding_model = load_embedding_model()
 
-    chunks = build_chunks("data/product_info.json")
-    embeddings = build_embeddings(chunks, embedding_model)
-    save_artifacts(chunks, embeddings, "storage")
-
-    model_path = os.getenv("MODEL_PATH")
-    llm = load_llm(model_path)
+    print("載入 LLM...")
+    llm = load_llm(get_model_path())
 
     print("AI 助手已啟動。")
     print("你可以詢問 GIGABYTE AORUS MASTER 16 AM6H 產品規格。")
@@ -36,7 +71,7 @@ def main():
     while True:
         query = input("\n請輸入問題：").strip()
 
-        if query.lower() in ["exit", "quit", "q"]:
+        if query.lower() in {"exit", "quit", "q"}:
             print("結束程式。")
             break
 
@@ -49,13 +84,13 @@ def main():
             model=embedding_model,
             embeddings=embeddings,
             chunks=chunks,
-            top_k=3,
+            top_k=TOP_K,
         )
 
         prompt = build_prompt(query, results)
 
         print("\n回答：")
-        answer, _ = generate_stream(llm, prompt)
+        generate_stream(llm, prompt)
         print()
 
 
