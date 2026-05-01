@@ -142,3 +142,24 @@
 - 將乾淨的 `content` 放入 prompt，避免 alias 污染生成內容。
 - 使用 `top_k=3` 提供模型上下文。
 - 使用 streaming 輸出並記錄 TTFT / TPS。
+
+- ### 4GB VRAM 使用量驗證
+
+為確認本專案符合 4GB VRAM 限制，使用 Colab T4 GPU 測量，包含載入 index、載入 embedding model、載入 LLM、retrieval 與 generation。
+在本次 Colab T4 測試環境與目前設定下，峰值 VRAM 使用量低於 4GB。
+
+測試結果如下：
+
+```text
+=== VRAM report ===
+Baseline: 0 MB
+baseline             peak: 0 MB / 15,360 MB (+0 MB)
+idle                 peak: 3 MB / 15,360 MB (+3 MB)
+load_index           peak: 3 MB / 15,360 MB (+3 MB)
+load_embedding       peak: 473 MB / 15,360 MB (+473 MB)
+load_llm             peak: 1,255 MB / 15,360 MB (+1,255 MB)
+retrieve             peak: 1,641 MB / 15,360 MB (+1,641 MB)
+generate             peak: 1,659 MB / 15,360 MB (+1,659 MB)
+finished             peak: 1,659 MB / 15,360 MB (+1,659 MB)
+Overall peak:        1,659 MB / 15,360 MB at stage 'generate'
+4096 MB check:       PASS (peak increase from baseline: 1,659 MB, limit: 4,096 MB)
