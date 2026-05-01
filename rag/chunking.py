@@ -415,7 +415,22 @@ def build_shared_comparison_chunk(category, specs, family, all_models):
     }
 
 
-def build_chunks(product_data):
+def normalize_product_items(product_data):
+    if isinstance(product_data, dict):
+        return [product_data]
+
+    if isinstance(product_data, list):
+        product_items = [item for item in product_data if isinstance(item, dict)]
+        if product_items:
+            return product_items
+
+    raise TypeError(
+        "product_info.json must be a product object or a list of product objects. "
+        f"Got {type(product_data).__name__}."
+    )
+
+
+def build_chunks_for_product(product_data):
     family = product_data["family"]
     all_models = product_data["models"]
     specs = product_data["specs"]
@@ -440,6 +455,13 @@ def build_chunks(product_data):
         elif len(grouped_specs) == 1 and is_shared_spec(grouped_specs[0], all_models):
             chunks.append(build_shared_comparison_chunk(category, grouped_specs, family, all_models))
 
+    return chunks
+
+
+def build_chunks(product_data):
+    chunks = []
+    for product_item in normalize_product_items(product_data):
+        chunks.extend(build_chunks_for_product(product_item))
     return chunks
 
 
