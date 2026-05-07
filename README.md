@@ -146,7 +146,9 @@
 - 使用 `top_k=3` 提供模型上下文。
 - 使用 streaming 輸出並記錄 TTFT / TPS。
 
-- ### 4GB VRAM 使用量驗證
+---
+
+### 4GB VRAM 使用量驗證
 
 為確認本專案符合 4GB VRAM 限制，使用 Colab T4 GPU 測量，包含載入 index、載入 embedding model、載入 LLM、retrieval 與 generation。  
 在本次 Colab T4 測試環境與目前設定下，峰值 VRAM 使用量低於 4GB。
