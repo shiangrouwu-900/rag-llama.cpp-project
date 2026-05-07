@@ -62,7 +62,7 @@
 ---
 
 ## 模型選擇理由
-選用 `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` 作為 `embedding model`  
+選用 `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` 作為 embedding model  
 選用 `qwen2.5-1.5b.q4_k_m.gguf` 作為生成模型，並使用 `llama.cpp` / `llama-cpp-python` 進行推論。選擇此模型的原因如下：
 
 1. **符合 4GB VRAM 限制**
