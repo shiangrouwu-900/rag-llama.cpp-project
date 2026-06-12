@@ -85,7 +85,7 @@
 
 ### 1. 效能表現
 
-本次正式評測以 21 筆測試資料為準，題型包含 exact、paraphrase、mix、fuzzy、multi、negative 與 out_of_scope。
+本次評測以 21 筆測試資料為準，題型包含 exact、paraphrase、mix、fuzzy、multi、negative 與 out_of_scope。
 
 | 指標 | 結果 |
 |---|---:|
