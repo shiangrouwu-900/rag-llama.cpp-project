@@ -10,10 +10,10 @@ from rag.generation import build_prompt, generate_stream, load_llm
 from rag.retrieval import load_index, retrieve
 
 
-TOP_K = 3
-MODEL_NAME = "qwen2.5-1.5b.q4_k_m"
-MODEL_PATH = os.getenv("MODEL_PATH")
-N_GPU_LAYERS = 20
+TOP_K = 4
+MODEL_NAME = "Qwen3-1.7B-Q4_K_M"
+MODEL_PATH = os.getenv("MODEL_PATH", "models/Qwen3-1.7B-Q4_K_M.gguf")
+N_GPU_LAYERS = int(os.getenv("N_GPU_LAYERS", "0"))
 
 TEST_DATA_PATH = "data/test_data.json"
 INDEX_DIR = "storage"
@@ -31,6 +31,64 @@ def save_jsonl(record, path=OUTPUT_PATH):
 
     with open(path, "a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def normalize_text(text):
+    return str(text or "").lower().replace(" ", "")
+
+
+def contains_all(text, facts):
+    normalized = normalize_text(text)
+    return all(normalize_text(fact) in normalized for fact in facts)
+
+
+def contains_any(text, facts):
+    normalized = normalize_text(text)
+    return any(normalize_text(fact) in normalized for fact in facts)
+
+
+def summarize_retrieval(results):
+    summary = []
+    for rank, result in enumerate(results, start=1):
+        chunk = result["chunk"]
+        summary.append({
+            "rank": rank,
+            "id": chunk.get("id"),
+            "type": chunk.get("type"),
+            "category": chunk.get("category"),
+            "zh_name": chunk.get("zh_name"),
+            "models": chunk.get("models", []),
+            "field_path": chunk.get("field_path"),
+            "field_label": chunk.get("field_label"),
+            "score": result.get("score"),
+            "semantic_score": result.get("semantic_score"),
+        })
+    return summary
+
+
+def evaluate_retrieval(results, expected_chunks):
+    if not expected_chunks:
+        return None
+
+    retrieved_ids = {result["chunk"].get("id") for result in results}
+    expected_ids = set(expected_chunks)
+    return {
+        "expected_chunks": list(expected_ids),
+        "retrieved_expected_chunks": sorted(expected_ids & retrieved_ids),
+        "hit": bool(expected_ids & retrieved_ids),
+    }
+
+
+def evaluate_answer(answer, required_facts=None, forbidden_facts=None):
+    required_facts = required_facts or []
+    forbidden_facts = forbidden_facts or []
+
+    return {
+        "required_facts": required_facts,
+        "forbidden_facts": forbidden_facts,
+        "required_facts_pass": contains_all(answer, required_facts) if required_facts else None,
+        "forbidden_facts_pass": not contains_any(answer, forbidden_facts) if forbidden_facts else None,
+    }
 
 
 def ensure_index(index_dir=INDEX_DIR, rebuild=REBUILD_INDEX):
@@ -55,7 +113,7 @@ def validate_model_path(model_path):
     if not model_path:
         raise ValueError(
             "MODEL_PATH 尚未設定。請先設定環境變數，例如：\n"
-            "export MODEL_PATH=/content/drive/MyDrive/rag_models/qwen2.5-1.5b.q4_k_m.gguf"
+            "export MODEL_PATH=/content/drive/MyDrive/rag_models/Qwen3-1.7B-Q4_K_M.gguf"
         )
 
     if not Path(model_path).exists():
@@ -108,12 +166,22 @@ def main():
         answer, metrics = generate_stream(llm, prompt)
         print()
 
+        retrieval_eval = evaluate_retrieval(results, item.get("expected_chunks", []))
+        answer_eval = evaluate_answer(
+            answer,
+            required_facts=item.get("required_facts", []),
+            forbidden_facts=item.get("forbidden_facts", []),
+        )
+
         record = {
             "timestamp": datetime.now().isoformat(timespec="seconds"),
             "query": query,
             "expected_answer": item.get("expected_answer"),
             "type": item.get("type"),
             "answer": answer.strip(),
+            "retrieved_chunks": summarize_retrieval(results),
+            "retrieval_eval": retrieval_eval,
+            "answer_eval": answer_eval,
             "ttft": metrics["ttft"],
             "tps": metrics["tps"],
             "output_tokens": metrics["output_tokens"],

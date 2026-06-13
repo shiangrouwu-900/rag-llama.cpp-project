@@ -9,8 +9,8 @@ from rag.build_index import main as build_index_main
 
 
 STORAGE_DIR = "storage"
-DEFAULT_MODEL_PATH = "models/qwen2.5-1.5b.q4_k_m.gguf"
-TOP_K = 3
+DEFAULT_MODEL_PATH = "models/Qwen3-1.7B-Q4_K_M.gguf"
+TOP_K = 4
 
 
 def index_files_exist(storage_dir=STORAGE_DIR):
@@ -49,7 +49,7 @@ def get_model_path():
         raise FileNotFoundError(
             f"找不到模型檔案：{model_path}\n"
             "請設定 MODEL_PATH，例如：\n"
-            'export MODEL_PATH="/content/drive/MyDrive/rag_models/qwen2.5-1.5b.q4_k_m.gguf"'
+            'export MODEL_PATH="/content/drive/MyDrive/rag_models/Qwen3-1.7B-Q4_K_M.gguf"'
         )
 
     return model_path

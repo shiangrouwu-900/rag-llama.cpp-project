@@ -1,418 +1,50 @@
 # rag/chunking.py
 
 import json
-from pathlib import Path
+import re
 from collections import defaultdict
+from pathlib import Path
 
 
 PRODUCT_DATA_PATH = "data/product_info.json"
-
-CATEGORY_LABELS = {
-    "OS": "作業系統",
-    "CPU": "處理器",
-    "GPU": "顯示晶片",
-    "Display": "螢幕",
-    "Memory": "記憶體",
-    "Storage": "儲存裝置",
-    "Keyboard": "鍵盤",
-    "Ports": "連接埠",
-    "Audio": "音效",
-    "Connectivity": "通訊",
-    "Webcam": "視訊鏡頭",
-    "Security": "安全裝置",
-    "Battery": "電池",
-    "Adapter": "變壓器",
-    "Physical": "外觀與尺寸",
-}
+COMPARE_TERMS = "比較 差異 不同 一樣 相同 共同 版本 差在哪 哪個 哪款"
 
 FIELD_LABELS = {
     "options": "選項",
     "note": "備註",
-    "name": "型號",
-    "cache": "快取",
-    "clock": "時脈",
-    "cores": "核心",
-    "threads": "執行緒",
+    "name": "名稱",
     "model": "型號",
-    "memory": "記憶體",
+    "type": "類型",
+    "count": "數量",
+    "standard": "規格",
+    "supports": "支援",
+    "features": "特色",
+    "metadata": "補充資訊",
+    "disclaimer": "備註",
+    "dimensions": "尺寸",
+    "width": "寬度",
+    "depth": "深度",
+    "height": "高度",
+    "weight": "重量",
+    "color": "顏色",
+    "capacity": "容量",
+    "max_capacity": "最大容量",
     "power": "功耗",
+    "clock": "時脈",
+    "speed": "速度",
+    "slots": "插槽",
+    "memory": "記憶體",
+    "left_side": "左側",
+    "right_side": "右側",
     "ai_boost": "AI Boost",
     "boost_clock": "Boost Clock",
     "oc": "OC",
-    "size": "尺寸",
-    "aspect_ratio": "比例",
-    "panel": "面板",
-    "resolution_name": "解析度等級",
-    "resolution": "解析度",
-    "refresh_rate": "更新率",
-    "response_time": "反應時間",
-    "color_gamut": "色域",
-    "brightness": "亮度",
-    "contrast_ratio": "對比",
-    "max_capacity": "最大容量",
-    "type": "類型",
-    "speed": "速度",
-    "slots": "插槽",
-    "backlight": "背光",
-    "zones": "分區",
-    "key_travel": "鍵程",
-    "left_side": "左側",
-    "right_side": "右側",
-    "count": "數量",
-    "port": "連接埠",
-    "standard": "規格",
-    "supports": "支援",
-    "speakers": "喇叭",
-    "power_each": "單顆功率",
-    "microphone": "麥克風",
-    "wifi": "Wi-Fi",
-    "protocol": "協定",
-    "antenna": "天線",
-    "lan": "有線網路",
-    "bluetooth": "藍牙",
-    "camera": "鏡頭",
-    "tpm": "TPM",
-    "capacity": "容量",
-    "dimensions": "尺寸",
-    "width": "寬",
-    "depth": "深",
-    "height": "高",
-    "weight": "重量",
-    "color": "顏色",
 }
 
 
 def load_product_data(path=PRODUCT_DATA_PATH):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
-
-
-def label_for(key):
-    return FIELD_LABELS.get(key, key)
-
-
-def list_text(items):
-    return "、".join(str(item) for item in items)
-
-
-def normalize_value(value):
-    if value == "exists":
-        return "有"
-    if value == "true":
-        return "是"
-    if value == "false":
-        return "否"
-    if isinstance(value, str):
-        return value.replace(" (approx)", " 約")
-    return str(value)
-
-
-def format_port_item(item):
-    count = item.get("count", 1)
-    port = item.get("port", "")
-    standard = item.get("standard")
-    supports = item.get("supports", [])
-
-    text = f"{count} 個 {port}" if count else port
-    if standard:
-        text += f"（{standard}）"
-    if supports:
-        text += f"，支援 {list_text(supports)}"
-    return text
-
-
-def flatten_value(value, prefix=""):
-    """Return a readable fallback for categories without custom formatting."""
-    parts = []
-
-    if isinstance(value, dict):
-        for key, item in value.items():
-            label = label_for(key)
-            if isinstance(item, dict):
-                nested = flatten_value(item)
-                parts.append(f"{label}為 {nested}")
-            elif isinstance(item, list):
-                if item and all(isinstance(x, dict) for x in item):
-                    parts.append(f"{label}包含 " + "；".join(format_port_item(x) for x in item))
-                else:
-                    parts.append(f"{label}為 {list_text(item)}")
-            else:
-                parts.append(f"{label}為 {normalize_value(item)}")
-    elif isinstance(value, list):
-        parts.append(list_text(value))
-    else:
-        parts.append(normalize_value(value))
-
-    return "，".join(part for part in parts if part)
-
-
-def format_value(category, value):
-    """Format structured specs as natural answer-ready Chinese."""
-    if category == "Physical":
-        dimensions = value.get("dimensions", {})
-        size = " x ".join(
-            dimensions[key]
-            for key in ("width", "depth", "height")
-            if dimensions.get(key)
-        )
-        parts = []
-        if size:
-            parts.append(f"尺寸為 {size}")
-        if value.get("weight"):
-            parts.append(f"重量約 {value['weight'].replace(' (approx)', '')}")
-        if value.get("color"):
-            parts.append(f"顏色為 {value['color']}")
-        return "，".join(parts) + "。"
-
-    if category == "CPU":
-        parts = []
-        if value.get("name"):
-            parts.append(value["name"])
-        details = []
-        if value.get("cores"):
-            details.append(f"{value['cores']} 核心")
-        if value.get("threads"):
-            details.append(f"{value['threads']} 執行緒")
-        if value.get("clock"):
-            details.append(f"最高 {value['clock'].replace('up to ', '')}")
-        if value.get("cache"):
-            details.append(f"{value['cache']} 快取")
-        return "處理器為 " + "，".join(parts + details) + "。"
-
-    if category == "GPU":
-        clock = value.get("clock", {})
-        details = []
-        if value.get("model"):
-            details.append(value["model"])
-        if value.get("memory"):
-            details.append(value["memory"])
-        if value.get("power"):
-            details.append(value["power"])
-        if clock.get("ai_boost"):
-            details.append(f"AI Boost {clock['ai_boost']}")
-        if clock.get("boost_clock"):
-            details.append(f"Boost Clock {clock['boost_clock']}")
-        return "顯示晶片為 " + "，".join(details) + "。"
-
-    if category == "Display":
-        parts = [
-            value.get("size"),
-            value.get("resolution_name"),
-            value.get("resolution"),
-            value.get("panel"),
-            value.get("refresh_rate"),
-            value.get("response_time"),
-            value.get("color_gamut"),
-            value.get("brightness"),
-        ]
-        return "螢幕規格為 " + "，".join(part for part in parts if part) + "。"
-
-    if category == "Memory":
-        return (
-            f"記憶體為 {value.get('type')} {value.get('speed')}，"
-            f"{value.get('slots')}，最高支援 {value.get('max_capacity')}。"
-        )
-
-    if category == "Storage":
-        return (
-            f"儲存裝置為 {value.get('type')}，最高 {value.get('max_capacity')}，"
-            f"插槽包含 {list_text(value.get('slots', []))}。"
-        )
-
-    if category == "Ports":
-        left = "；".join(format_port_item(item) for item in value.get("left_side", []))
-        right = "；".join(format_port_item(item) for item in value.get("right_side", []))
-        return f"連接埠左側包含 {left}；右側包含 {right}。"
-
-    return flatten_value(value) + "。"
-
-
-def format_metadata(spec):
-    parts = []
-
-    features = spec.get("features", [])
-    if features:
-        parts.append("特色：" + list_text(features))
-
-    if "expandable" in spec:
-        parts.append("可擴充：" + ("是" if spec["expandable"] else "否"))
-
-    disclaimers = spec.get("metadata", {}).get("disclaimer", [])
-    if disclaimers:
-        parts.append("備註：" + list_text(disclaimers))
-
-    return " ".join(parts)
-
-
-def is_shared_spec(spec, all_models):
-    return set(spec.get("applies_to", [])) == set(all_models)
-
-
-def is_specific_spec(spec):
-    return len(spec.get("applies_to", [])) == 1
-
-
-def make_chunk_id(chunk_type, category, model=None):
-    if model:
-        return f"{chunk_type}:{category}:{model}"
-    return f"{chunk_type}:{category}"
-
-
-def build_question_patterns(category, zh_name, aliases, models):
-    model_text = "、".join(models)
-    names = [zh_name, category] + aliases
-    patterns = []
-    for name in names:
-        patterns.extend([
-            f"{name}規格為何",
-            f"{name}是什麼",
-            f"有沒有{name}",
-            f"支援{name}嗎",
-            f"{name}多少",
-        ])
-    patterns.extend([
-        f"{model_text} 的 {zh_name} 有不同嗎",
-        f"{model_text} 有什麼差異",
-        f"{model_text} 差在哪",
-        f"比較 {model_text}",
-    ])
-    return patterns
-
-
-def build_search_text(spec, family, models, include_compare_terms=True):
-    category = spec["category"]
-    zh_name = spec.get("zh_name") or CATEGORY_LABELS.get(category, category)
-    aliases = spec.get("aliases", [])
-    value_text = flatten_value(spec.get("value", {}))
-    question_patterns = build_question_patterns(category, zh_name, aliases, models)
-
-    parts = [
-        family,
-        " ".join(models),
-        category,
-        zh_name,
-        " ".join(aliases),
-        " ".join(question_patterns),
-        value_text,
-    ]
-    if include_compare_terms:
-        parts.append("比較 差異 不同 一樣 共同 版本")
-    return "\n".join(part for part in parts if part)
-
-
-def build_content(spec, family, models):
-    category = spec["category"]
-    zh_name = spec.get("zh_name") or CATEGORY_LABELS.get(category, category)
-    model_text = "、".join(models)
-    value_text = format_value(category, spec.get("value", {}))
-    extra_text = format_metadata(spec)
-
-    content = f"{family} {model_text} 的{zh_name}：{value_text}"
-    if extra_text:
-        content += f"\n{extra_text}"
-    return content
-
-
-def build_shared_chunk(spec, family, all_models):
-    category = spec["category"]
-    zh_name = spec.get("zh_name") or CATEGORY_LABELS.get(category, category)
-    models = spec.get("applies_to", [])
-    content = build_content(spec, family, models)
-
-    return {
-        "id": make_chunk_id("shared", category),
-        "type": "shared",
-        "family": family,
-        "category": category,
-        "zh_name": zh_name,
-        "models": models,
-        "content": content,
-        "text": content,
-        "search_text": build_search_text(spec, family, models),
-        "source": "product_info.json",
-    }
-
-
-def build_specific_chunk(spec, family):
-    category = spec["category"]
-    zh_name = spec.get("zh_name") or CATEGORY_LABELS.get(category, category)
-    model = spec.get("applies_to", [None])[0]
-    content = build_content(spec, family, [model])
-
-    return {
-        "id": make_chunk_id("specific", category, model),
-        "type": "specific",
-        "family": family,
-        "category": category,
-        "zh_name": zh_name,
-        "models": [model],
-        "content": content,
-        "text": content,
-        "search_text": build_search_text(spec, family, [model]),
-        "source": "product_info.json",
-    }
-
-
-def build_comparison_chunk(category, specs, family):
-    zh_name = specs[0].get("zh_name") or CATEGORY_LABELS.get(category, category)
-    models = [spec["applies_to"][0] for spec in specs]
-    contents = []
-    search_parts = [family, category, zh_name, "比較 差異 不同 一樣 共同 版本", " ".join(models)]
-
-    values_by_model = {}
-    for spec in specs:
-        model = spec["applies_to"][0]
-        value_text = format_value(category, spec.get("value", {})).rstrip("。")
-        values_by_model[model] = value_text
-        contents.append(f"{model}：{value_text}。")
-        search_parts.append(build_search_text(spec, family, [model]))
-
-    unique_values = set(values_by_model.values())
-    if len(unique_values) == 1:
-        summary = f"{'、'.join(models)} 的{zh_name}沒有不同，皆為 {next(iter(unique_values))}。"
-    else:
-        summary = f"{'、'.join(models)} 的{zh_name}有差異：" + " ".join(contents)
-
-    content = f"{family} 版本比較（{zh_name}）：{summary}"
-
-    return {
-        "id": make_chunk_id("comparison", category),
-        "type": "comparison",
-        "family": family,
-        "category": category,
-        "zh_name": zh_name,
-        "models": models,
-        "content": content,
-        "text": content,
-        "search_text": "\n".join(search_parts),
-        "source": "product_info.json",
-    }
-
-
-def build_shared_comparison_chunk(category, specs, family, all_models):
-    spec = specs[0]
-    zh_name = spec.get("zh_name") or CATEGORY_LABELS.get(category, category)
-    value_text = format_value(category, spec.get("value", {})).rstrip("。")
-    model_text = "、".join(all_models)
-    content = f"{family} 版本比較（{zh_name}）：{model_text} 的{zh_name}沒有不同，皆為 {value_text}。"
-
-    search_text = "\n".join([
-        build_search_text(spec, family, all_models),
-        f"{model_text} {zh_name} 是否不同 有不同嗎 一樣嗎 共同 差異 比較",
-    ])
-
-    return {
-        "id": make_chunk_id("comparison_shared", category),
-        "type": "comparison",
-        "family": family,
-        "category": category,
-        "zh_name": zh_name,
-        "models": all_models,
-        "content": content,
-        "text": content,
-        "search_text": search_text,
-        "source": "product_info.json",
-    }
 
 
 def normalize_product_items(product_data):
@@ -430,30 +62,390 @@ def normalize_product_items(product_data):
     )
 
 
+def humanize_key(key):
+    if key in FIELD_LABELS:
+        return FIELD_LABELS[key]
+
+    text = re.sub(r"[_\-]+", " ", str(key)).strip()
+    return text or str(key)
+
+
+def normalize_value(value):
+    if value is True or value == "true":
+        return "是"
+    if value is False or value == "false":
+        return "否"
+    if value == "exists":
+        return "有"
+    if value is None:
+        return "未標示"
+    if isinstance(value, str):
+        return value.replace(" (approx)", " 約")
+    return str(value)
+
+
+def join_values(values):
+    return "、".join(normalize_value(value) for value in values if value is not None)
+
+
+def make_label(path):
+    return " / ".join(humanize_key(part) for part in path if part)
+
+
+def make_path_key(path):
+    return ".".join(str(part) for part in path if part)
+
+
+def flatten_facts(value, path=()):
+    """Flatten arbitrary nested product specs into leaf facts."""
+    facts = []
+
+    if isinstance(value, dict):
+        for key, item in value.items():
+            facts.extend(flatten_facts(item, path + (key,)))
+        return facts
+
+    if isinstance(value, list):
+        if not value:
+            facts.append({
+                "path": make_path_key(path),
+                "label": make_label(path),
+                "value": "未標示",
+            })
+            return facts
+
+        if all(not isinstance(item, (dict, list)) for item in value):
+            facts.append({
+                "path": make_path_key(path),
+                "label": make_label(path),
+                "value": join_values(value),
+            })
+            return facts
+
+        for index, item in enumerate(value, start=1):
+            item_path = path + (str(index),)
+            if isinstance(item, (dict, list)):
+                facts.extend(flatten_facts(item, item_path))
+            else:
+                facts.append({
+                    "path": make_path_key(item_path),
+                    "label": make_label(item_path),
+                    "value": normalize_value(item),
+                })
+        return facts
+
+    facts.append({
+        "path": make_path_key(path),
+        "label": make_label(path),
+        "value": normalize_value(value),
+    })
+    return facts
+
+
+def collect_extra_facts(spec):
+    facts = []
+
+    if spec.get("features"):
+        facts.append({
+            "path": "features",
+            "label": "特色",
+            "value": join_values(spec["features"]),
+        })
+
+    if "expandable" in spec:
+        facts.append({
+            "path": "expandable",
+            "label": "可擴充",
+            "value": normalize_value(spec["expandable"]),
+        })
+
+    metadata = spec.get("metadata")
+    if metadata:
+        facts.extend(flatten_facts(metadata, ("metadata",)))
+
+    return facts
+
+
+def spec_identity(spec):
+    category = spec["category"]
+    zh_name = spec.get("zh_name") or category
+    aliases = spec.get("aliases", [])
+    return category, zh_name, aliases
+
+
+def model_text(models):
+    return "、".join(model for model in models if model)
+
+
+def make_chunk_id(chunk_type, category, model=None, field_path=None):
+    parts = [chunk_type, category]
+    if model:
+        parts.append(model)
+    if field_path:
+        parts.append(field_path)
+    return ":".join(parts)
+
+
+def summarize_facts(facts):
+    return "；".join(f"{fact['label']}：{fact['value']}" for fact in facts)
+
+
+def build_question_patterns(category, zh_name, aliases, models, field_fact=None):
+    field_label = field_fact["label"] if field_fact else None
+    field_value = field_fact["value"] if field_fact else None
+    names = list(dict.fromkeys([zh_name, category, *aliases]))
+    if field_label:
+        names.append(field_label)
+
+    patterns = []
+    for name in names:
+        patterns.extend([
+            f"{name}規格",
+            f"{name}是什麼",
+            f"{name}多少",
+            f"有沒有{name}",
+            f"支援{name}嗎",
+            f"{name}差異",
+            f"{name}比較",
+        ])
+
+    models_joined = model_text(models)
+    if models_joined:
+        target = field_label or zh_name
+        patterns.extend([
+            f"{models_joined} 的 {target}",
+            f"{models_joined} {target} 有不同嗎",
+            f"比較 {models_joined} {target}",
+            f"{models_joined} 差在哪",
+        ])
+
+    if field_value:
+        patterns.append(str(field_value))
+
+    return patterns
+
+
+def build_search_text(spec, family, models, facts=None, field_fact=None):
+    category, zh_name, aliases = spec_identity(spec)
+    facts = facts if facts is not None else flatten_facts(spec.get("value", {})) + collect_extra_facts(spec)
+    value_terms = []
+
+    for fact in facts:
+        value_terms.extend([fact["path"], fact["label"], fact["value"]])
+
+    parts = [
+        family,
+        model_text(models),
+        category,
+        zh_name,
+        " ".join(aliases),
+        " ".join(build_question_patterns(category, zh_name, aliases, models, field_fact)),
+        " ".join(value_terms),
+        COMPARE_TERMS,
+    ]
+    return "\n".join(part for part in parts if part)
+
+
+def build_content(spec, family, models):
+    category, zh_name, aliases = spec_identity(spec)
+    facts = flatten_facts(spec.get("value", {}))
+    extra_facts = collect_extra_facts(spec)
+    lines = [
+        f"產品：{family}",
+        f"適用型號：{model_text(models)}",
+        f"規格類別：{zh_name}（{category}）",
+    ]
+
+    if aliases:
+        lines.append(f"可對應問法：{join_values(aliases)}")
+
+    lines.append("規格內容：")
+    lines.extend(f"- {fact['label']}：{fact['value']}" for fact in facts)
+
+    if extra_facts:
+        lines.append("補充資訊：")
+        lines.extend(f"- {fact['label']}：{fact['value']}" for fact in extra_facts)
+
+    return "\n".join(lines)
+
+
+def build_spec_chunk(spec, family, all_models):
+    category, zh_name, _ = spec_identity(spec)
+    models = spec.get("applies_to") or all_models
+    facts = flatten_facts(spec.get("value", {})) + collect_extra_facts(spec)
+    chunk_type = "shared" if set(models) == set(all_models) else "specific"
+    model_for_id = None if chunk_type == "shared" else "_".join(models)
+    content = build_content(spec, family, models)
+
+    return {
+        "id": make_chunk_id(chunk_type, category, model_for_id),
+        "type": chunk_type,
+        "family": family,
+        "category": category,
+        "zh_name": zh_name,
+        "aliases": spec.get("aliases", []),
+        "models": models,
+        "facts": facts,
+        "content": content,
+        "text": content,
+        "search_text": build_search_text(spec, family, models, facts=facts),
+        "source": "product_info.json",
+    }
+
+
+def build_fact_chunks(spec, family, all_models):
+    category, zh_name, _ = spec_identity(spec)
+    models = spec.get("applies_to") or all_models
+    facts = flatten_facts(spec.get("value", {})) + collect_extra_facts(spec)
+    chunks = []
+
+    for fact in facts:
+        content = "\n".join([
+            f"產品：{family}",
+            f"適用型號：{model_text(models)}",
+            f"規格類別：{zh_name}（{category}）",
+            f"規格欄位：{fact['label']}（{fact['path']}）",
+            f"規格值：{fact['value']}",
+        ])
+        chunks.append({
+            "id": make_chunk_id("fact", category, "_".join(models), fact["path"]),
+            "type": "fact",
+            "family": family,
+            "category": category,
+            "zh_name": zh_name,
+            "aliases": spec.get("aliases", []),
+            "models": models,
+            "field_path": fact["path"],
+            "field_label": fact["label"],
+            "field_value": fact["value"],
+            "content": content,
+            "text": content,
+            "search_text": build_search_text(spec, family, models, facts=facts, field_fact=fact),
+            "source": "product_info.json",
+        })
+
+    return chunks
+
+
+def comparable_value(spec):
+    facts = flatten_facts(spec.get("value", {})) + collect_extra_facts(spec)
+    return tuple((fact["path"], fact["value"]) for fact in facts)
+
+
+def build_category_comparison_chunk(category, specs, family, all_models):
+    first = specs[0]
+    _, zh_name, _ = spec_identity(first)
+    lines = [
+        f"產品：{family}",
+        f"比較類別：{zh_name}（{category}）",
+        "各型號規格：",
+    ]
+    search_parts = [family, category, zh_name, model_text(all_models), COMPARE_TERMS]
+    values_by_model = {}
+
+    for spec in specs:
+        models = spec.get("applies_to") or all_models
+        facts = flatten_facts(spec.get("value", {})) + collect_extra_facts(spec)
+        summary = summarize_facts(facts)
+
+        for model in models:
+            values_by_model[model] = comparable_value(spec)
+            lines.append(f"- {model}：{summary}")
+        search_parts.append(build_search_text(spec, family, models, facts=facts))
+
+    if len(set(values_by_model.values())) == 1:
+        lines.append("比較結論：上述型號在此規格類別相同。")
+    else:
+        lines.append("比較結論：上述型號在此規格類別有差異，請依各型號列出的規格回答。")
+
+    content = "\n".join(lines)
+    return {
+        "id": make_chunk_id("comparison", category),
+        "type": "comparison",
+        "family": family,
+        "category": category,
+        "zh_name": zh_name,
+        "models": sorted(values_by_model),
+        "content": content,
+        "text": content,
+        "search_text": "\n".join(search_parts),
+        "source": "product_info.json",
+    }
+
+
+def build_field_comparison_chunks(category, specs, family, all_models):
+    _, zh_name, _ = spec_identity(specs[0])
+    values_by_field = defaultdict(dict)
+    labels_by_field = {}
+    aliases = specs[0].get("aliases", [])
+
+    for spec in specs:
+        models = spec.get("applies_to") or all_models
+        for fact in flatten_facts(spec.get("value", {})) + collect_extra_facts(spec):
+            labels_by_field[fact["path"]] = fact["label"]
+            for model in models:
+                values_by_field[fact["path"]][model] = fact["value"]
+
+    chunks = []
+    for field_path, model_values in values_by_field.items():
+        if len(model_values) < 2:
+            continue
+
+        field_label = labels_by_field[field_path]
+        unique_values = set(model_values.values())
+        lines = [
+            f"產品：{family}",
+            f"比較類別：{zh_name}（{category}）",
+            f"比較欄位：{field_label}（{field_path}）",
+        ]
+        lines.extend(f"- {model}：{value}" for model, value in sorted(model_values.items()))
+        if len(unique_values) == 1:
+            lines.append("比較結論：此欄位在上述型號相同。")
+        else:
+            lines.append("比較結論：此欄位在上述型號不同。")
+
+        pseudo_spec = {"category": category, "zh_name": zh_name, "aliases": aliases, "value": {}}
+        field_fact = {"path": field_path, "label": field_label, "value": " ".join(unique_values)}
+        content = "\n".join(lines)
+        chunks.append({
+            "id": make_chunk_id("comparison_field", category, field_path=field_path),
+            "type": "comparison",
+            "family": family,
+            "category": category,
+            "zh_name": zh_name,
+            "models": sorted(model_values),
+            "field_path": field_path,
+            "field_label": field_label,
+            "content": content,
+            "text": content,
+            "search_text": build_search_text(
+                pseudo_spec,
+                family,
+                sorted(model_values),
+                facts=[field_fact],
+                field_fact=field_fact,
+            ),
+            "source": "product_info.json",
+        })
+
+    return chunks
+
+
 def build_chunks_for_product(product_data):
     family = product_data["family"]
     all_models = product_data["models"]
     specs = product_data["specs"]
-
-    chunks = []
     category_groups = defaultdict(list)
+    chunks = []
 
     for spec in specs:
         category_groups[spec["category"]].append(spec)
-
-        if is_shared_spec(spec, all_models):
-            chunks.append(build_shared_chunk(spec, family, all_models))
-        elif is_specific_spec(spec):
-            chunks.append(build_specific_chunk(spec, family))
-        else:
-            chunks.append(build_shared_chunk(spec, family, all_models))
+        chunks.append(build_spec_chunk(spec, family, all_models))
+        chunks.extend(build_fact_chunks(spec, family, all_models))
 
     for category, grouped_specs in category_groups.items():
-        specific_specs = [spec for spec in grouped_specs if is_specific_spec(spec)]
-        if len(specific_specs) >= 2:
-            chunks.append(build_comparison_chunk(category, specific_specs, family))
-        elif len(grouped_specs) == 1 and is_shared_spec(grouped_specs[0], all_models):
-            chunks.append(build_shared_comparison_chunk(category, grouped_specs, family, all_models))
+        chunks.append(build_category_comparison_chunk(category, grouped_specs, family, all_models))
+        chunks.extend(build_field_comparison_chunks(category, grouped_specs, family, all_models))
 
     return chunks
 
