@@ -39,9 +39,6 @@ jobs:
           print("Core imports passed.")
           PY
 
-      - name: Build index without downloading embedding model
-        env:
-          HF_HUB_OFFLINE: "1"
-          TRANSFORMERS_OFFLINE: "1"
+      - name: Build index with embedding model
         run: uv run python -m rag.build_index
 
