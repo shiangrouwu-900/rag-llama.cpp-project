@@ -10,7 +10,7 @@ from rag.build_index import main as build_index_main
 
 STORAGE_DIR = "storage"
 DEFAULT_MODEL_PATH = "models/Qwen3-1.7B-Q4_K_M.gguf"
-TOP_K = 4
+TOP_K = int(os.getenv("TOP_K", "4"))
 
 
 def index_files_exist(storage_dir=STORAGE_DIR):

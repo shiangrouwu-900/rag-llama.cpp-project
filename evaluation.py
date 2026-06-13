@@ -10,10 +10,13 @@ from rag.generation import build_prompt, generate_stream, load_llm
 from rag.retrieval import load_index, retrieve
 
 
-TOP_K = 4
+TOP_K = int(os.getenv("TOP_K", "4"))
 MODEL_NAME = "Qwen3-1.7B-Q4_K_M"
 MODEL_PATH = os.getenv("MODEL_PATH", "models/Qwen3-1.7B-Q4_K_M.gguf")
 N_GPU_LAYERS = int(os.getenv("N_GPU_LAYERS", "0"))
+N_CTX = int(os.getenv("N_CTX", "3072"))
+N_THREADS = int(os.getenv("N_THREADS", "4"))
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", "192"))
 
 TEST_DATA_PATH = "data/test_data.json"
 INDEX_DIR = "storage"
@@ -138,6 +141,8 @@ def main():
     llm = load_llm(
         model_path=MODEL_PATH,
         n_gpu_layers=N_GPU_LAYERS,
+        n_ctx=N_CTX,
+        n_threads=N_THREADS,
     )
 
     test_data = load_test_data(TEST_DATA_PATH)
@@ -163,7 +168,7 @@ def main():
         prompt = build_prompt(query, results)
 
         print("回答：")
-        answer, metrics = generate_stream(llm, prompt)
+        answer, metrics = generate_stream(llm, prompt, max_tokens=MAX_TOKENS)
         print()
 
         retrieval_eval = evaluate_retrieval(results, item.get("expected_chunks", []))
@@ -189,6 +194,9 @@ def main():
             "model": MODEL_NAME,
             "model_path": MODEL_PATH,
             "n_gpu_layers": N_GPU_LAYERS,
+            "n_ctx": N_CTX,
+            "n_threads": N_THREADS,
+            "max_tokens": MAX_TOKENS,
         }
 
         save_jsonl(record)

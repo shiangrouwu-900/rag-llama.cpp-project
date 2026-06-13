@@ -1,10 +1,25 @@
 import time
+import os
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
 from llama_cpp import Llama
+
+
+def env_int(name, default):
+    value = os.getenv(name)
+    if value is None or value == "":
+        return default
+    return int(value)
+
+
+def env_float(name, default):
+    value = os.getenv(name)
+    if value is None or value == "":
+        return default
+    return float(value)
 
 
 class LlamaCliRunner:
@@ -110,10 +125,14 @@ def clean_cli_output(output, stop):
 
 def load_llm(
     model_path="models/Qwen3-1.7B-Q4_K_M.gguf",
-    n_ctx=3072,
-    n_gpu_layers=0,
-    n_threads=4,
+    n_ctx=None,
+    n_gpu_layers=None,
+    n_threads=None,
 ):
+    n_ctx = env_int("N_CTX", 3072) if n_ctx is None else n_ctx
+    n_gpu_layers = env_int("N_GPU_LAYERS", 0) if n_gpu_layers is None else n_gpu_layers
+    n_threads = env_int("N_THREADS", 4) if n_threads is None else n_threads
+
     try:
         return Llama(
             model_path=model_path,
@@ -167,6 +186,10 @@ def build_prompt(query, retrieved_results):
 
 
 def generate_stream(llm, prompt, max_tokens=192):
+    max_tokens = env_int("MAX_TOKENS", max_tokens)
+    temperature = env_float("TEMPERATURE", 0.0)
+    top_p = env_float("TOP_P", 1.0)
+
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -178,8 +201,8 @@ def generate_stream(llm, prompt, max_tokens=192):
     stream = llm(
         prompt,
         max_tokens=max_tokens,
-        temperature=0.0,
-        top_p=1.0,
+        temperature=temperature,
+        top_p=top_p,
         stop=[
             "<|im_end|>",
             "<|im_start|>",
