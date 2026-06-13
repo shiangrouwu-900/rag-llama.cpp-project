@@ -1,0 +1,47 @@
+name: uv smoke test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  uv-smoke-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies from lockfile
+        run: uv sync --locked
+
+      - name: Compile project files
+        run: uv run python -m py_compile main.py evaluation.py vram_test.py rag/*.py
+
+      - name: Import core modules
+        run: |
+          uv run python - <<'PY'
+          import rag.chunking
+          import rag.embedding
+          import rag.generation
+          import rag.retrieval
+          print("Core imports passed.")
+          PY
+
+      - name: Build index without downloading embedding model
+        env:
+          HF_HUB_OFFLINE: "1"
+          TRANSFORMERS_OFFLINE: "1"
+        run: uv run python -m rag.build_index
+
