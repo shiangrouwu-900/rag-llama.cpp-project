@@ -36,6 +36,12 @@ def save_jsonl(record, path=OUTPUT_PATH):
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
+def reset_output_file(path=OUTPUT_PATH):
+    output_path = Path(path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text("", encoding="utf-8")
+
+
 def normalize_text(text):
     return str(text or "").lower().replace(" ", "")
 
@@ -146,6 +152,7 @@ def main():
     )
 
     test_data = load_test_data(TEST_DATA_PATH)
+    reset_output_file(OUTPUT_PATH)
 
     print(f"開始 evaluation，共 {len(test_data)} 題。")
     print(f"結果會儲存到：{OUTPUT_PATH}")
