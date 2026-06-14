@@ -236,7 +236,7 @@ sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 - Display 問題需要 category summary 或 field-group chunk，否則單靠 top-k fact chunks 容易漏掉 resolution、panel、refresh rate。
 - Connectivity + Webcam 題需要 category-aware retrieval，確保每個被問到的 category 至少有相關 chunk 進入 context。
 
-後續改善方向：
+後續應改善方向：
 
 1. 為 Display、Ports、Connectivity 建立更完整的 category summary chunk。
 2. Ports chunk 應保留完整 port 名稱、count、介面版本與支援功能，而不是只切出單一 count。
@@ -247,33 +247,24 @@ sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 
 ## 4GB VRAM 使用量驗證
 
-以下分析依據 GitHub 目前的 `vram_samples.csv`。
+以下分析依據`vram_samples.csv`。
 
 VRAM 取樣摘要：
 
-| 階段 | 峰值 VRAM | 相對 baseline 增加量 |
-|---|---:|---:|
-| baseline | 1571 MB | 0 MB |
-| idle | 1571 MB | 0 MB |
-| load_index | 1571 MB | 0 MB |
-| load_embedding | 2041 MB | 470 MB |
-| load_llm | 3825 MB | 2254 MB |
-| retrieve | 3825 MB | 2254 MB |
-| generate | 3895 MB | 2324 MB |
-| finished | 3895 MB | 2324 MB |
+| 階段 | 峰值 VRAM |
+|---|---|
+| baseline | 1571 MB |
+| idle | 1571 MB |
+| load_index | 1571 MB |
+| load_embedding | 2041 MB |
+| load_llm | 3825 MB |
+| retrieve | 3825 MB |
+| generate | 3895 MB |
+| finished | 3895 MB |
 
 整體峰值：
 
 ```text
 3895 MB / 15360 MB
 ```
-
-相對 baseline 的峰值增加量：
-
-```text
-2324 MB
-```
-
-若以 4GB VRAM 作為限制，這次測試的增量為 2324 MB，低於 4096 MB，因此通過 4GB VRAM 使用量驗證。
-
-需要注意的是，`vram_samples.csv` 的 baseline 已經有 1571 MB 使用量，因此表格同時列出「實際 used_mb」與「相對 baseline 增加量」。判斷模型與 RAG pipeline 是否可落在 4GB 額外負載內時，應以相對 baseline 增加量為主要依據。
+若以 4GB VRAM 作為限制，這次測試的 3895 MB，低於 4096 MB，因此通過 4GB VRAM 使用量驗證。
