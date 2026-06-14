@@ -69,6 +69,7 @@
 
 ### 主要程式
 
+| 檔案 | 作用 |
 |---|---|
 | `main.py` | 互動式產品規格問答入口，負責載入 index、embedding model、LLM，並串接 retrieval 與 generation。 |
 | `evaluation.py` | 使用 `data/test_data.json` 執行測試問題，記錄回答、retrieved chunks、推論速度與模型參數。 |
