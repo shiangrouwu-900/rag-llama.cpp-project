@@ -69,6 +69,7 @@
 
 ### 主要程式
 
+|---|---|
 | `main.py` | 互動式產品規格問答入口，負責載入 index、embedding model、LLM，並串接 retrieval 與 generation。 |
 | `evaluation.py` | 使用 `data/test_data.json` 執行測試問題，記錄回答、retrieved chunks、推論速度與模型參數。 |
 | `vram_test.py` | 量測 RAG pipeline 各階段 GPU VRAM 使用量，包含載入 index、embedding model、LLM、retrieval 與 generation。 |
